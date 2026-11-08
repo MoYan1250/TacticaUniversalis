@@ -39,8 +39,9 @@ ExportedObj/
 .cursor/
 AGENTS.md
 
-# Scraped pages, downloaded map geometry, and editor backups
+# Separate repositories, downloaded geometry, and editor backups
 Tools/player_scraper/
+Tools/map_collision/
 Tools/map_collision_cache/
 Tools/map_collision_out/
 Tools/backups/
