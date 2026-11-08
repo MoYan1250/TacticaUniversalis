@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "facilities": [
+    {"type":0,"baseUpgradeCost":140000,"baseMaintenance":4500,"upgradeHours":[0,1680,2184,2688,3192],"upgradeWeeks":[0,10,13,16,19]},
+    {"type":1,"baseUpgradeCost":110000,"baseMaintenance":3500,"upgradeHours":[0,1680,2184,2688,3192],"upgradeWeeks":[0,10,13,16,19]},
+    {"type":2,"baseUpgradeCost":125000,"baseMaintenance":4000,"upgradeHours":[0,1680,2184,2688,3192],"upgradeWeeks":[0,10,13,16,19]},
+    {"type":3,"baseUpgradeCost":100000,"baseMaintenance":3000,"upgradeHours":[0,1680,2184,2688,3192],"upgradeWeeks":[0,10,13,16,19]}
+  ]
+}

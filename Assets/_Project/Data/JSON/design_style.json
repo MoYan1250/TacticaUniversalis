@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 1,
+  "meta": {
+    "name": "Tactica Universalis Design Style",
+    "locale": "zh-TW",
+    "playerCopyLocale": "zh-TW",
+    "scope": [
+      "career",
+      "battle",
+      "global"
+    ],
+    "lastUpdated": "2026-08-20",
+    "frameworkSource": "AGENTS.md",
+    "description": "Dual-layer style guide: referenceStyle is the aspirational pitch-deck mood board; inGameTokens documents the shipped UI as implemented in Presentation scripts.",
+    "visualPilotQueue": {
+      "status": "g_true_frosted_glass_2026-08-20",
+      "note": "Phase G: true frosted glass Color.clear + UiFrostedGlassHost blur; rounded large frames; button aspect pill/round. Atmosphere under UI. QuickMatch excluded.",
+      "lastVerified": "2026-08-20",
+      "phaseC": {
+        "club_hub": "pass",
+        "scripted_event": "pass_structure",
+        "career_world_map": "pass",
+        "mission_tree": "pass_after_fix",
+        "career_shell_header": "pass_load_save",
+        "quickmatch_official": "pass_static_and_runtime_anchors",
+        "quickmatch_practice": "pass_runtime_anchors"
+      },
+      "phaseD": {
+        "settings_light_chrome": "implemented_2026-08-20",
+        "news_detail_glass": "implemented_2026-08-20",
+        "secondary_overlays_light_chrome": "implemented_2026-08-20"
+      },
+      "candidates": [
+        {
+          "id": "club_hub_light_chrome",
+          "screen": "club_hub",
+          "optionRef": "screens.club_hub.nextPilotOptions.light_chrome"
+        },
+        {
+          "id": "scripted_event_glass",
+          "screen": "scripted_event",
+          "optionRef": "screens.scripted_event.nextPilotOptions.glass_pilot",
+          "recommended": true
+        },
+        {
+          "id": "career_world_map_glow",
+          "screen": "career_world_map",
+          "optionRef": "screens.career_world_map.nextPilotOptions.glow_enhance"
+        }
+      ],
+      "notRecommended": [
+        "career_shell full glass reskin",
+        "settings_panel glass without exception review"
+      ],
+      "phaseE": {
+        "glass_capsule_on_light_chrome": "implemented_2026-08-20",
+        "glass_frame_solid_white_capsule_fix": "implemented_2026-08-20",
+        "e2_career_surfaces_white_capsule": "implemented_2026-08-20",
+        "e3_shell_title_map_reg": "implemented_2026-08-20"
+      },
+      "phaseF": {
+        "starry_navy_bg": "implemented_2026-08-20",
+        "orange_gold_ambient_glow": "implemented_2026-08-20",
+        "accent_blue_link_only": "implemented_2026-08-20",
+        "gradient_scattered_gold": "implemented_2026-08-20"
+      },
+      "phaseG": {
+        "true_frosted_glass_clear_blur": "implemented_2026-08-20",
+        "rounded_frames_aspect_buttons": "implemented_2026-08-20",
+        "agents_md_glass_shape_rules": "implemented_2026-08-20"
+      }
+    }
+  },
+  "referenceStyle": {
+    "overarchingStyle": {
+      "theme": "Dark mode with glassmorphism effects",
+      "vibe": "Professional, modern, sleek, tech-oriented",
+      "background": {
+        "type": "Gradient",
+        "colors": [
+          "Deep Navy Blue (#27285C)",
+          "Vibrant Electric Blue (#0033FF - approximate, used for glow effects)"
+        ],
+        "description": "A dark, almost black navy blue background illuminated by large, soft, radial gradients of vibrant electric blue, often positioned at the bottom, top, or corners to create depth and a 'glowing' effect."
+      }
+    },
+    "colorPalette": {
+      "primaryText": "White (#FFFFFF)",
+      "accentText": "Pale Blue/Ice Blue (#D0E5E9 - approximate, used for primary headings like 'INVESTOR' or 'COMPANY')",
+      "secondaryText": "Light Gray (#E0E0E0 - approximate, used for body copy)",
+      "glassPanels": {
+        "background": "Translucent White/Blue (Low opacity, e.g., rgba(255, 255, 255, 0.05))",
+        "border": "Translucent White (Higher opacity than background, e.g., rgba(255, 255, 255, 0.2))",
+        "shadow": "Subtle dark drop shadow to lift panels off the background"
+      },
+      "solidShapes": "White (#FFFFFF, used for solid pill shapes or numbered cards)",
+      "chartColors": [
+        "Turquoise/Teal (#40E0D0 - approximate)",
+        "Bright Blue (#0055FF - approximate)",
+        "Dark Blue (#001188 - approximate)",
+        "White (#FFFFFF)"
+      ]
+    },
+    "typography": {
+      "primaryHeading": {
+        "fontFamily": "Sans-serif (Geometric, bold, e.g., Montserrat or similar)",
+        "weight": "Black or Extra Bold",
+        "case": "Uppercase",
+        "color": "Pale Blue (first word/line) and White (second word/line) mixed",
+        "size": "Very large, dominant on the slide"
+      },
+      "secondaryHeading": {
+        "fontFamily": "Sans-serif (Clean, modern)",
+        "weight": "Regular or Medium",
+        "case": "Title Case",
+        "color": "White",
+        "size": "Medium-large, used for panel titles (e.g., 'About Us')"
+      },
+      "bodyText": {
+        "fontFamily": "Sans-serif (Highly legible, e.g., Inter, Roboto)",
+        "weight": "Light or Regular",
+        "color": "Light Gray or White",
+        "size": "Small to Medium",
+        "lineHeight": "Spacious (approx 1.5)"
+      },
+      "numbers": {
+        "fontFamily": "Sans-serif",
+        "weight": "Black or Extra Bold",
+        "color": "White (on glass) or Black/Dark Blue (on white cards)",
+        "size": "Large, used as stylistic elements (e.g., '01', '02')"
+      }
+    },
+    "structuralElements": {
+      "glassmorphismPanels": {
+        "style": "Frosted glass effect",
+        "borderRadius": "Rounded corners (approx 16px - 24px)",
+        "border": "Thin, subtle, light-colored solid border",
+        "background": "Semi-transparent",
+        "usage": "Primary container for text blocks, lists, and icons. Varying sizes depending on content."
+      },
+      "solidCards": {
+        "style": "Solid white background",
+        "borderRadius": "Rounded corners, often with one distinct 'folded' or colored corner accent (e.g., top right corner in blue on Business Model slide)",
+        "usage": "Used for distinct, numbered steps or key points to contrast with glass panels."
+      },
+      "pillShapes": {
+        "style": "Fully rounded (stadium shape)",
+        "background": "Solid white or glassmorphic",
+        "usage": "Used for tags, categories, or short lists (e.g., 'PROFESSIONAL', 'MODERN' on title slide)."
+      },
+      "logoBadge": {
+        "style": "Small square glassmorphic panel",
+        "position": "Typically top right corner",
+        "content": "Company logo, name, tagline, and 'SINCE [Year]'"
+      },
+      "icons": {
+        "style": "Thin, outline style (monolinear)",
+        "color": "White",
+        "usage": "Used inside glass panels to illustrate concepts visually. Often placed in their own smaller square glass container or aligned with lists."
+      },
+      "buttonsControls": {
+        "style": "Small circular elements with arrows or 'x' marks, embedded within glass panels.",
+        "usage": "Decorative or suggestive of interactivity. Not the same as in-game career CTA buttons."
+      }
+    },
+    "layoutPrinciples": {
+      "spacing": "Generous padding within panels and significant whitespace between elements. Layouts are uncluttered.",
+      "alignment": "Predominantly left-aligned for text within panels. Titles are often top-left. Some elements (like tags on the title slide) are center-aligned.",
+      "hierarchy": "Clear visual hierarchy established through massive typography for slide titles, followed by panel headers, then body text. Numbers are used to guide reading order on list slides.",
+      "grid": "Implied flexible grid system. Layouts vary from single large panels to split 50/50 layouts, to rows of multiple cards or lists."
+    }
+  },
+  "inGameTokens": {
+    "overarchingStyle": {
+      "theme": "Starry navy career shell with orange-gold ambient glow, glass frames, and white capsule CTAs",
+      "vibe": "Esports management sim, information-dense but panelized, Traditional Chinese primary UI",
+      "background": {
+        "type": "Solid starry navy with soft radial orange-gold glow",
+        "colors": [
+          "Career Background Starry Navy (#27285C)",
+          "Ambient Orange-Gold glow (Accent #E0A526 at low alpha via UiRoundedRectUtility.GetRadialGlowSprite)",
+          "Glass panel fills low-alpha white over navy (see UiLightChromeUtility)"
+        ],
+        "description": "Shipped career UI uses #27285C canvas with 1-2 orange-gold radial glows under shell/title content. Gold (#E0A526) is primary CTA, rank, and ambient light. Ice blue (#9EC4E0) is link/status only — not ambient. Battle QuickMatch T/CT colors unchanged."
+      }
+    },
+    "colorPalette": {
+      "career": {
+        "background": "Starry Navy gradient base (#27285C) with deep top (#1A1B3D) and lift (#32336A)",
+        "panel": "Deep Navy Panel (approx rgba 0.08,0.10,0.18 at 92% opacity)",
+        "panelInner": "Darker Navy Well (approx rgba 0.06,0.08,0.14)",
+        "panelRow": "List Row Navy (approx rgba 0.10,0.12,0.20)",
+        "accentGold": "Orange-Gold (#E0A526, primary CTA, rank gold, ambient glow)",
+        "accentDim": "Warm Muted Gold (approx rgb 0.62,0.42,0.10)",
+        "accentBlue": "Ice Blue (#9EC4E0, jump hints and active status links only; not ambient)",
+        "textPrimary": "White (#FFFFFF)",
+        "textMuted": "Cool Light Gray-Blue (approx rgb 0.78,0.82,0.90)",
+        "buttonFace": "Navy Button Fill (approx rgba 0.10,0.12,0.20)",
+        "buttonEdge": "Cool Navy Edge (approx rgba 0.22,0.28,0.40)",
+        "tabIdle": "Idle Tab Navy (approx rgba 0.09,0.11,0.18)",
+        "positive": "Soft Green (#66D19E - approximate, gains and good stats)",
+        "warning": "Gold (#E0A526, same as accent)",
+        "danger": "Soft Red (#EB6B73 - approximate, losses and alerts)",
+        "profileValue": "Stat Green (#73BD84)",
+        "profileTraitName": "Trait Purple (#DD8BFF)",
+        "sharedWithClubHub": "Club hub drawer reuses Panel, PanelInner, PanelRow, Accent, ButtonFace, ButtonEdge, TextPrimary, TextMuted from CareerDemoController.cs static palette. Hub dimRight is separate: approx rgba(0.02, 0.03, 0.08, 0.45).",
+        "ambientGlow": "Starry navy underlay under UI; frosted panels sample blurred backdrop via UiFrostedGlassHost/Slice",
+        "glassPanels": "True frosted glass: Mask showMaskGraphic=false + Kawase blur slice; panel Image stays opaque white for stencil (never Color.clear); large frames rounded; CTAs white near-square rounded / wide pill"
+      },
+      "battle": {
+        "ctSide": "Light Blue (#73B8F2 - approximate, counter-terrorist markers and HUD)",
+        "tSide": "Warm Orange (#F29438 - approximate, terrorist markers and HUD)",
+        "traitName": "Trait Label Purple (#DD8BFF)",
+        "traitEffect": "Trait Effect Green (#73BD84)",
+        "universalCardEdge": "Neutral Gray-Blue (approx #6B768A, economy/tactical cards)",
+        "exclusiveCardEdge": "Warm Orange-Brown (approx #B87A47, hero/exclusive picks)",
+        "seriesPipT": "Gold (#E0A526)",
+        "seriesPipCt": "Blue (#1B99FF)",
+        "sightRay": "Red Aim Line (approx #FF2914 at 88% opacity)",
+        "muzzleTracer": "Orange Tracer (approx #FF8024)"
+      },
+      "semantic": {
+        "success": "Use career.positive / battle.traitEffect green family",
+        "warning": "Use career.accentGold",
+        "danger": "Use career.danger red family",
+        "info": "Use career.accentBlue for links only; large fills prefer gold rim or cool gray"
+      }
+    },
+    "typography": {
+      "primaryUi": {
+        "asset": "NotoSansTC-Bold.ttf",
+        "usage": "Default career and battle body labels, most buttons"
+      },
+      "titleEmphasis": {
+        "asset": "GenYoMin2.otf",
+        "usage": "Section titles, hub headers, emphasized career copy (_uiFont700 slot)"
+      },
+      "blackWeight": {
+        "asset": "NotoSansTC-Black.ttf",
+        "usage": "Badges, strong labels where Black weight is needed"
+      },
+      "playerId": {
+        "asset": "Anuschka-Demo.ttf",
+        "usage": "Player id styling on battle profile popup and similar slots"
+      },
+      "scoreboard": {
+        "asset": "Anton.ttf",
+        "usage": "QuickMatch score numerals and large battle readouts"
+      },
+      "bodyText": {
+        "fontFamily": "Noto Sans TC stack (Bold default, GenYoMin for headings)",
+        "weight": "Bold for UI chrome, regular/medium inside muted helper lines",
+        "case": "Sentence case for zh-TW player copy; avoid ALL CAPS except legacy Latin labels",
+        "color": "White primary, muted cool gray-blue for secondary",
+        "size": "Best Fit on career text buttons; do not cap max size too low (see buttonPolicy)",
+        "lineHeight": "Legacy Text: use Wrap or Overflow for long zh-TW strings"
+      }
+    },
+    "structuralElements": {
+      "careerPanels": {
+        "style": "True frosted glass via UiLightChromeUtility: clear fill + backdrop blur slices; rounded rect frames",
+        "borderRadius": "Rounded rect for large frames (GetRoundedRectSprite)",
+        "border": "Thin white Border on CreateCard frames; CTA face inset ~1.5px",
+        "background": "Color.clear glass face; blur from UiFrostedGlassHost; nested wells may stay opaque for contrast",
+        "usage": "Career title, shell chrome, CreateCard overlays; not QuickMatch"
+      },
+      "careerButtons": {
+        "style": "Solid white CTA; near-square rounded rect, wide/tall left-right pill (ShapeSpriteForAnchors)",
+        "labelHeightFill": "Approx 90% of button face (5% inset each side)",
+        "faceInsetPx": "1.5px",
+        "chromeInsetPx": "3px for outer banners (e.g., official match start strip)",
+        "closeButton": "Square × in top-right of overlays (e.g., competition detail 0.935-0.985 anchors, mission tree panel corner)",
+        "usage": "Primary player actions in career mode. See buttonPolicy and exceptions."
+      },
+      "battleControlBar": {
+        "officialLayout": "Screen-centered short bar (approx anchor 0.36-0.64 width), four controls: timeout, pause, speed, skip",
+        "practiceLayout": "Wide bar (approx 0.12-0.88), includes team switch and match index",
+        "settingsButton": "Fixed bottom-right on canvas (approx 0.905-0.985), outside control bar in official mode",
+        "usage": "QuickMatchDemoController ApplyControlBarLayout(simulation)"
+      },
+      "icons": {
+        "style": "Sprite icons from Resources/UI/Icons and UI/Logos",
+        "color": "Mostly white on dark panels; team colors on battle HUD",
+        "usage": "Settings gear, playback icons, stat icons, club logos"
+      },
+      "clubHubDrawer": {
+        "style": "Opaque left slide drawer with B1 light_chrome rounded corners, thin border, shadow; not glassmorphism",
+        "source": "CareerClubHubPresentation.cs partial on CareerDemoController",
+        "lightChromePilot": "2026-08-20 B1: UiRoundedRectUtility rounded corners, white 18% border, drop shadow on main drawer; inset wells for header/modifier/content. No blur.",
+        "panel": {
+          "fill": "Panel (#33366B approx at 96% opacity) on Face layer",
+          "hierarchy": "ClubHubPanel > Shadow > Frame > Face (_clubHubPanelFace)",
+          "anchorWidth": "ClubHubPanelAnchorWidth = 0.40 * 2/3 of screen width",
+          "verticalAnchor": "approx Y 0.035-0.965",
+          "slideDurationSeconds": 0.26,
+          "slideEasing": "ease in-out anchoredPosition X"
+        },
+        "dimRight": {
+          "fill": "approx rgba(0.02, 0.03, 0.08, 0.45)",
+          "anchor": "from panel right edge minus ClubHubDimOverlap (0.04) to screen right",
+          "interaction": "clickable; closes hub via CloseClubHubPanel"
+        },
+        "header": {
+          "fill": "PanelInner in inset well",
+          "anchor": "approx panel X 0.04-0.96, Y 0.88-0.98",
+          "logo": "Face/HeaderFrame/Header/Logo approx X 0.02-0.14; cached _clubHubHeaderLogo; white or 20% white if missing sprite",
+          "title": "GenYoMin2 via _uiFont700, Accent gold, size 20",
+          "close": "CreateActionButton × at approx X 0.84-0.98, Y 0.15-0.85; follows buttonPolicy"
+        },
+        "modifierHost": {
+          "fill": "PanelInner",
+          "anchor": "approx panel X 0.04-0.96, Y 0.72-0.87",
+          "iconGrid": "GridLayoutGroup cell 34x34, spacing 4, padding 6/4",
+          "hoverTooltipDelaySeconds": 1.0,
+          "emptyHint": "TextMuted 12pt when no buffs or debuffs"
+        },
+        "tabs": {
+          "labels": [
+            "歷史",
+            "任務",
+            "組織",
+            "決議"
+          ],
+          "anchorY": "approx 0.635-0.655",
+          "anchorX": "History 0.04-0.24, Missions 0.26-0.46, Organization 0.48-0.68, Resolutions 0.70-0.92",
+          "idleFace": "ButtonFace",
+          "activeFace": "PanelRow",
+          "pipeline": "CreateActionButton + _uiFont700"
+        },
+        "contentHost": {
+          "fill": "PanelInner",
+          "anchor": "approx panel X 0.04-0.96, Y 0.03-0.62",
+          "scroll": "vertical ScrollRect, sensitivity 36",
+          "layout": "VerticalLayoutGroup spacing 8, padding 8",
+          "rows": "PanelRow list rows; section titles use Accent via AddClubHubContentTitle"
+        },
+        "missionTreeRelation": "Missions tab opens fullscreen CareerMissionTreePresentation overlay with its own glass pilot styling. Hub drawer stays opaque; do not apply mission-tree blur to hub panel.",
+        "usage": "Opened from club logo on career shell; four tabs for history stats, missions, organization estates, board resolutions"
+      },
+      "careerShell": {
+        "style": "Opaque purple-navy main HUD; not glassmorphism",
+        "source": "CareerDemoController.cs BuildCareerUi / shell layout",
+        "constants": {
+          "rightRailX": "0.930-0.988",
+          "headerY": "0.908-0.985",
+          "mainColumnXEnd": 0.92,
+          "tabRailSlotCount": 8,
+          "tabs": [
+            "地圖",
+            "選手",
+            "經濟",
+            "談判",
+            "基地",
+            "戰術",
+            "社群",
+            "圖鑑"
+          ]
+        },
+        "layers": {
+          "topAccentStrip": "full width Y 0.992-1.0, Accent gold",
+          "shellInset": "canvas approx X 0.02-0.98, Y 0.025-0.975",
+          "header": "PanelInner; club logo, cash/fans/prestige/fame/rank icon stats, season label, time controls",
+          "statusBar": "PanelInner Y 0.855-0.905; status text + AccentBlue jump hint",
+          "contentPanel": "Panel Y 0.015-0.852; vertical ScrollRect into tab content",
+          "tabRail": "PanelInner X 0.930-0.988 Y 0.015-0.905; 8 vertical slots, active tab shows gold accent bar"
+        },
+        "tabVisuals": {
+          "idleFace": "TabIdle",
+          "activeFace": "PanelRow with gold Accent strip on left",
+          "labelFont": "_uiFont700, Best Fit 8-22"
+        },
+        "overlayStack": "Same CareerCanvas hosts: player detail, coach detail, title screen, settings, world ranking, competition detail, sponsor negotiation, scripted event, competition register, stat tooltip, club hub. Later siblings paint on top.",
+        "usage": "Primary career play surface; world map is tab 0 default content"
+      },
+      "scriptedEventModal": {
+        "style": "Centered glass modal with tier-colored outer frame; B2 glass_pilot 2026-08-20",
+        "source": "CareerScriptedEventPresentation.cs",
+        "glassPilot": "UiBackdropBlurCapture on open, DimTint, electric glow, EventCard Shadow+OuterFrame+GlassFill/GlassFillInner rounded via UiRoundedRectUtility; tier chrome keeps edge colors with translucent fills; option button font exception unchanged",
+        "mainOverlay": {
+          "hierarchy": "ScriptedEventOverlay > BlurBg/FallbackBg/DimTint/Glow > EventCard > Shadow+OuterFrame > EventPanel > Face",
+          "dim": "EventDimTint rgba approx 0.043/0.063/0.129/0.55; light 0.28 alpha when drag tiers",
+          "outerFrame": "tier Accent/gold/steel/silver, rounded sliced sprite on EventCard anchor",
+          "panel": "EventGlassFill translucent navy",
+          "face": "EventGlassFillInner; UiWindowDrag Target=EventCard; CanDrag by tier",
+          "topAccent": "gold/tier strip Y 0.975-1.0 on face",
+          "caption": "TextMuted 13pt, default 隊伍事件",
+          "title": "Accent gold GenYoMin 22pt",
+          "body": "TextPrimary 15pt, NarrativeUiText.ApplyBodyStyle, Wrap",
+          "options": "Up to 3 CreateActionButton rows; exception: smaller font overrides per exceptions.scripted_event"
+        },
+        "eventToast": {
+          "anchor": "0.62-0.985 X, 0.78-0.96 Y",
+          "fill": "dark panel rgba(0.08, 0.09, 0.16, 0.94) with gray edge",
+          "usage": "Non-blocking brief event notification"
+        },
+        "newsDetail": {
+          "dim": "EventDimTint over blur/fallback like main event modal",
+          "hierarchy": "NewsDetailOverlay > BlurBg/FallbackBg/DimTint/Glow > NewsCard > CardShadow+OuterFrame > Panel > Face",
+          "frame": "blue-gray OuterFrame 0.18-0.82, EventGlassFill translucent, gold Accent strip, 關閉 CTA",
+          "glassPilot": "2026-08-20 D2: UiBackdropBlurCapture via NewsDetailBlurHost; rounded glass card aligned with B2 scripted event modal",
+          "usage": "Expand news items from event log"
+        },
+        "copyRules": "firstPerson fields may use corner quotes per copyGuidelines.firstPersonException only",
+        "usage": "Pause-tier scripted career events with 1-3 player choices"
+      },
+      "careerWorldMap": {
+        "style": "Map-first home tab with opaque side panels; B3 glow_enhance 2026-08-20 on hub nodes",
+        "source": "CareerWorldMapPresentation.cs",
+        "glowEnhancePilot": "Dual-layer hub glow: UiRoundedRectUtility radial OuterGlow + node_glow inner Glow + white Core; tuned idle/hover/selected alpha and scale via ApplyMapHubNodeVisual; no blur",
+        "mapLayer": {
+          "anchor": "approx X 0.01-0.74, Y 0.02-0.98",
+          "hubs": "MapHubDefinition from JSON; OuterGlow radial sprite + node_glow inner; per-hub HTML color",
+          "hubNodeSize": "64x64 root; outer glow extends 16px beyond",
+          "playerBase": "gold radial glow marker reserved but hidden to avoid duplicate hub lights"
+        },
+        "sidePanels": {
+          "schedule": "right column 0.755-0.99, Y 0.02-0.50, Panel 96% opacity",
+          "sideIntel": "hub click side panel with title/body/actions",
+          "eventsNewsButton": "bottom-left approx 0.012-0.155 X, 0.018-0.098 Y"
+        },
+        "tooltip": "hover tooltip on map hubs",
+        "dataSource": "Map hub JSON schema MapHubFile schemaVersion 1",
+        "usage": "Career shell tab 0 地圖; primary navigation and schedule view"
+      },
+      "settingsPanel": {
+        "style": "Opaque centered settings card with D1 light_chrome; own button metrics",
+        "source": "SettingsPanelPresentation.cs",
+        "lightChromePilot": "2026-08-20 D1: CreateChromeCard Shadow>Frame>Face via UiRoundedRectUtility; ChromeBorder white 18%, ChromeShadow black 38%; also on SaveBrowser and DeleteConfirm sibling cards; hover tip rounded inset. No blur. Button sizing exception unchanged.",
+        "paletteNote": "Duplicates career palette constants locally; values align with CareerDemoController Panel/Accent/Button*",
+        "layout": {
+          "dim": "black 55% fullscreen",
+          "panel": "center X 0.36-0.64, Y 0.06-0.94; hierarchy SettingsPanel > Shadow > Frame > Face",
+          "close": "× top-right CreateActionButton",
+          "sections": "Display, Audio, Game, fixed action rows, save browser, delete confirm",
+          "hoverTip": "bottom band 0.04-0.22 for option descriptions; rounded chrome frame"
+        },
+        "exception": "Listed in exceptions.settings_panel; do not apply default career CTA label-height policy",
+        "usage": "Gear button on career shell and battle scenes"
+      },
+      "secondaryCareerPanels": {
+        "sharedStyle": "Phase G: true frosted CreateCard (clear + blur) + solid white CTAs; near-square rounded / wide pill via UiLightChromeUtility",
+        "panels": [
+          {
+            "id": "career_community",
+            "source": "CareerCommunityPresentation.cs",
+            "usage": "Tab 社群: operations, post history, placeholder fan trends",
+            "chrome": "not_in_d3_batch"
+          },
+          {
+            "id": "career_ranking_intel",
+            "source": "CareerRankingClubIntelPresentation.cs",
+            "usage": "Club intel overlay from ranking/world rank flows; D3 light_chrome + PanelInner inset; logo, stats, roster wells",
+            "chrome": "light_chrome_2026-08-20",
+            "buttons": "solid_white_capsule_2026-08-20",
+            "frame": "glass_translucent_2026-08-20"
+          },
+          {
+            "id": "career_coach_staff",
+            "source": "CareerCoachStaffPresentation.cs",
+            "usage": "Tab 基地 coach roster cards + coach detail overlay with D3 light_chrome",
+            "chrome": "light_chrome_2026-08-20",
+            "buttons": "solid_white_capsule_2026-08-20",
+            "frame": "glass_translucent_2026-08-20"
+          },
+          {
+            "id": "career_competition_register",
+            "source": "CareerCompetitionRegisterPresentation.cs",
+            "usage": "Register confirm and choose-two overlays; D3 light_chrome",
+            "chrome": "light_chrome_2026-08-20",
+            "buttons": "solid_white_capsule_2026-08-20",
+            "frame": "glass_translucent_2026-08-20"
+          },
+          {
+            "id": "career_competition_bracket",
+            "source": "CareerCompetitionBracketPresentation.cs",
+            "usage": "HLTV-style bracket inside competition detail overlay",
+            "chrome": "not_in_d3_batch"
+          },
+          {
+            "id": "career_player_standing",
+            "source": "CareerPlayerStandingPresentation.cs",
+            "usage": "Standing status icons with hover tooltips on player rows",
+            "chrome": "not_in_d3_batch"
+          },
+          {
+            "id": "map_ban_pick",
+            "source": "MapBanPickPresentation.cs",
+            "usage": "BO3 map veto UI; D3 light_chrome with darker neutral Panel fills",
+            "chrome": "light_chrome_2026-08-20",
+            "buttons": "solid_white_capsule_2026-08-20",
+            "frame": "glass_translucent_2026-08-20"
+          }
+        ]
+      }
+    },
+    "layoutPrinciples": {
+      "careerShell": {
+        "headerBand": "Top header approx anchor Y 0.908-0.985 within shell inset",
+        "statusBand": "Y 0.855-0.905",
+        "contentBand": "Y 0.015-0.852",
+        "rightTabRail": "Right rail approx anchor X 0.930-0.988, Y 0.015-0.905",
+        "mainColumn": "Content column ends approx X 0.920",
+        "topAccentStrip": "Y 0.992-1.0 full width gold",
+        "shellInset": "X 0.02-0.98, Y 0.025-0.975",
+        "tabLabels": [
+          "地圖",
+          "選手",
+          "經濟",
+          "談判",
+          "基地",
+          "戰術",
+          "社群",
+          "圖鑑"
+        ],
+        "tabSlotCount": 8,
+        "contentScroll": "VerticalLayoutGroup spacing 8, padding 4",
+        "description": "Header stats left, time controls center-right, vertical tab rail on far right. Tab 0 hosts world map."
+      },
+      "careerWorldMap": {
+        "mapAnchor": "X 0.01-0.74, Y 0.02-0.98",
+        "schedulePanel": "X 0.755-0.99, Y 0.02-0.50",
+        "eventsNewsButton": "X 0.012-0.155, Y 0.018-0.098",
+        "hubOuterGlowSprite": "UiRoundedRectUtility.GetRadialGlowSprite",
+        "hubInnerGlowSprite": "Resources/UI/Maps/node_glow",
+        "hubVisualStates": "ApplyMapHubNodeVisual idle/hover/selected",
+        "description": "B3 glow_enhance 2026-08-20: dual-layer hub radial glow; schedule panel stays opaque."
+      },
+      "scriptedEvent": {
+        "modalAnchor": "EventCard approx 0.16-0.84 by tier",
+        "optionRowHeight": "approx 0.08 each, up to 3 stacked",
+        "toastAnchor": "0.62-0.985 X, 0.78-0.96 Y",
+        "newsDetailAnchor": "frame 0.18-0.82",
+        "description": "B2 glass event modal; D2 news detail also glass with blur. Toast remains opaque sibling overlay."
+      },
+      "settingsPanel": {
+        "panelAnchor": "X 0.36-0.64, Y 0.06-0.94",
+        "dimAlpha": 0.55,
+        "hoverTipBand": "panel Y 0.04-0.22",
+        "description": "Centered modal on career or battle canvas; exception button sizing."
+      },
+      "clubHub": {
+        "panelSlideDurationSeconds": 0.26,
+        "panelAnchorWidth": "0.40 * 2/3 of canvas width (ClubHubPanelAnchorWidth)",
+        "dimOverlap": 0.04,
+        "panelVerticalAnchor": "Y 0.035-0.965",
+        "dimHorizontalAnchor": "X from panelWidth minus dimOverlap to 1.0",
+        "headerBand": "panel Y 0.88-0.98",
+        "modifierBand": "panel Y 0.72-0.87",
+        "tabBand": "panel Y 0.635-0.655",
+        "contentBand": "panel Y 0.03-0.62",
+        "contentLayout": "VerticalLayoutGroup spacing 8, padding 8",
+        "modifierIconSize": 34,
+        "closeControl": "× on hub header right approx X 0.84-0.98",
+        "description": "Side drawer slides from left over career shell; right dim dismisses. Mission tree is separate fullscreen overlay on Missions tab only."
+      },
+      "spacing": "Career rows typically 32-72px preferred height via LayoutElement; hub content uses VerticalLayoutGroup spacing 8-10px",
+      "alignment": "zh-TW labels left-aligned in lists; numeric values right-aligned in stat rows",
+      "hierarchy": "Accent gold for section titles, TextPrimary for values, TextMuted for helper lines"
+    },
+    "legacyText": {
+      "horizontalWrapMode": "Only Wrap or Overflow. No Truncate on horizontal axis.",
+      "longCopy": "Prefer Overflow or layout reflow; never HorizontalWrapMode.Truncate for CJK UI strings",
+      "source": "AGENTS.md Unity UI Legacy Text section"
+    }
+  },
+  "buttonPolicy": {
+    "source": "AGENTS.md career button label height and width rules",
+    "defaultPipeline": "CareerDemoController.CreateActionButton -> ApplyFilledButtonLabel",
+    "labelHeightFill": "0.9 (90% of button face, 5% inset each edge)",
+    "bestFit": "Enable Best Fit; do not post-clamp resizeTextMaxSize or fontSize down to 12-15",
+    "width": {
+      "shortCta": "Do not use near full-width anchors for short labels",
+      "clubSelectReference": "approx anchor 0.22-0.78",
+      "briefingActions": "approx 20% width each for back/confirm",
+      "mediumCta": "approx 50-70% centered width",
+      "longLabels": "Full width allowed for long names, full competition titles, player name buttons"
+    },
+    "chrome": {
+      "faceInsetPx": 1.5,
+      "outerChromePx": 3,
+      "rule": "Dark border stays tight to button; no large empty black frame around small CTAs"
+    },
+    "glassCapsule": {
+      "status": "e3_expanded_2026-08-20",
+      "factory": "UiLightChromeUtility.CreateGlassCapsuleButton",
+      "look": "Solid white pill face + dark charcoal label; Accent or danger rim for primary/confirm; no blur",
+      "appliesTo": [
+        "D3 secondary overlays",
+        "career_shell_pause_speed_tabs",
+        "club_hub drawer CTAs and tabs",
+        "community_tab_ctas",
+        "map_ban_pick Start/Close",
+        "map_schedule_registration_slots",
+        "map_schedule_side_panels",
+        "mission_tree_claim_close",
+        "scripted_event_options_news_close",
+        "settings_panel",
+        "title_era_club_difficulty",
+        "title_start_and_briefing",
+        "training_and_row_ctas"
+      ],
+      "excludes": [
+        "QuickMatch",
+        "map schedule registration slots",
+        "scripted_event options",
+        "title screen"
+      ],
+      "panelLook": "Translucent glass rounded frame + thin white border; white or near-white body text; no blur"
+    }
+  },
+  "copyGuidelines": {
+    "source": "AGENTS.md text generation section",
+    "locale": "zh-TW for player-visible strings",
+    "forbiddenSymbols": {
+      "rule": "Do not casually use decorative brackets or book-title marks in player copy",
+      "examples": "Avoid adding corner quotes, full-width parentheses, or title marks without user approval",
+      "firstPersonException": "Corner quotes allowed ONLY in first-person fields such as firstPersonDescription and firstPersonOptions in historical/scripted events"
+    },
+    "forbiddenReferences": "Do not put design prompts or other-game analogies into player-facing text. Example: do not write EU4-like or HOI4-like comparisons in tooltips or event copy.",
+    "abbreviations": "Write full readable labels. Example: use full term for recent scores, not a one-character shorthand; use full world ranking label, not abbreviated rank slang unless industry-standard and space allows.",
+    "tone": "In-universe, direct, management-sim professional. Reference deck English is for visual mood only, not player strings."
+  },
+  "exceptions": [
+    {
+      "id": "settings_panel",
+      "component": "SettingsPanelPresentation",
+      "rule": "Full settings button set exempt from default career CTA label-height and width policy"
+    },
+    {
+      "id": "competition_badge",
+      "component": "CareerCompetitionBadgePresentation",
+      "rule": "Tier and placement badges keep smaller fixed badge typography"
+    },
+    {
+      "id": "scripted_event",
+      "component": "CareerScriptedEventPresentation",
+      "rule": "Event option buttons keep existing smaller font overrides"
+    },
+    {
+      "id": "map_schedule_registration",
+      "component": "BuildMapScheduleRegistrationButton",
+      "rule": "Fixed approx 68x72 two-line registration slot; do not apply narrow CTA width rules"
+    },
+    {
+      "id": "quickmatch_controller",
+      "component": "QuickMatchDemoController.cs",
+      "rule": "High-risk UTF-8 file: never PowerShell rewrite or Cursor StrReplace; use Tools/patch_*.py with UTF-8 only"
+    }
+  ],
+  "screens": [
+    {
+      "id": "career_shell",
+      "description": "Main career HUD: header stats, status bar, tab content scroll, right tab rail",
+      "inGameOverrides": "Opaque purple shell from CareerDemoController: top gold accent strip, Bg #27285C canvas, PanelInner header with club logo + icon stats + season + pause/speed controls, status bar with AccentBlue jump hint, main content scroll, 8-slot right tab rail with tabs 地圖/選手/經濟/談判/基地/戰術/社群/圖鑑. Hosts overlays: settings, club hub, scripted events, player/coach detail, competition flows. See inGameTokens.structuralElements.careerShell and layoutPrinciples.careerShell. Do not apply mission-tree glass to shell. D3 2026-08-20: player/coach/competition/sponsor/world-ranking overlays use UiLightChromeUtility light_chrome. E1 2026-08-20: shell CreateActionButton unchanged; overlay/hub/settings use glass capsules. E1-fix 2026-08-20: shell CreateActionButton unchanged; overlays use glass frames + white capsules. E2 2026-08-20: tab content AddRowButton/training/community use white capsules; header controls unchanged. E3 2026-08-20: header pause/speed and right tabs are white solid capsules; header/tab rail glass inset. Phase F 2026-08-20: Bg #0B1021 starry navy; AddAmbientGoldGlow orange-gold radial under shell/title; AccentBlue ice #9EC4E0 for jump/status only.",
+      "nextPilotOptions": {
+        "defaultRecommendation": "opaque_only; full shell glass not recommended",
+        "options": [
+          {
+            "id": "opaque_only",
+            "label": "Maintain opaque shell",
+            "summary": "No visual change; documentation only"
+          }
+        ]
+      }
+    },
+    {
+      "id": "career_world_map",
+      "description": "World map home tab with hub nodes, schedule panel, and event log entry",
+      "inGameOverrides": "Tab 0 content from CareerWorldMapPresentation: B3 glow_enhance 2026-08-20 adds dual-layer hub glow OuterGlow radial + inner node_glow with idle/hover/selected tuning via ApplyMapHubNodeVisual; map layer 0.01-0.74 width; right schedule panel 0.755-0.99 opaque; bottom-left events/news button. Hub click opens side intel panel. See structuralElements.careerWorldMap. E2: schedule/side panels glass CreateCard; events/register white capsules. E3: schedule registration slots use pill chrome; fixed size exception retained.",
+      "verificationStatus": "pass_2026-08-20",
+      "nextPilotOptions": {
+        "defaultRecommendation": "glow_enhance completed 2026-08-20; Phase B visual pilots complete",
+        "options": [
+          {
+            "id": "glow_enhance",
+            "label": "Stronger hub radial glow",
+            "summary": "Tune hub glow colors/sprites only; keep opaque schedule panel",
+            "status": "implemented_2026-08-20"
+          },
+          {
+            "id": "opaque_only",
+            "label": "Maintain current map",
+            "summary": "No visual change"
+          }
+        ]
+      }
+    },
+    {
+      "id": "club_hub",
+      "description": "Club logo drawer: history, missions, organization, resolutions tabs",
+      "inGameOverrides": "Opaque purple drawer from CareerClubHubPresentation: B1 light_chrome pilot 2026-08-20 adds UiRoundedRectUtility rounded corners, thin white border, and drop shadow on main panel plus inset wells for header/modifier/content; purple Panel fills unchanged, no blur. Left slide 0.26s, right dim click-to-close. Four tabs 歷史/任務/組織/決議; 任務 opens CareerMissionTreePresentation overlay. See structuralElements.clubHubDrawer. E1 2026-08-20: hub CTAs and tabs use glass capsules; chrome rim polished. E1-fix 2026-08-20: drawer glass translucent face/wells; white solid capsule tabs and CTAs.",
+      "verificationStatus": "pass_2026-08-20",
+      "nextPilotOptions": {
+        "defaultRecommendation": "2 completed; next visual pilot is scripted_event glass_pilot or world_map glow_enhance",
+        "options": [
+          {
+            "id": "opaque_only",
+            "label": "Maintain opaque hub",
+            "summary": "Documentation only; zero visual change to hub drawer"
+          },
+          {
+            "id": "light_chrome",
+            "label": "Light chrome pilot",
+            "summary": "Reuse UiRoundedRectUtility for rounded corners, thin border, and shadow on hub panel only; keep purple Panel fills; no blur",
+            "status": "implemented_2026-08-20"
+          },
+          {
+            "id": "glass_pilot",
+            "label": "Glass pilot on hub",
+            "summary": "Reuse UiBackdropBlurCapture on dim region and semi-transparent panel; high risk: conflicts with career purple shell and slide animation timing; requires explicit user approval"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mission_tree",
+      "description": "Fullscreen NAVI-style mission tree with hover tooltip",
+      "inGameOverrides": "Glassmorphism pilot 2026-08-20: UiBackdropBlurCapture snapshots career UI on open, Kawase UIBlurBlit shader, dim navy tint, radial electric-blue glow sprites, rounded glass panels with shadow, left pill node list and right fixed tooltip with default content. See CareerMissionTreePresentation.cs and UiRoundedRectUtility.cs. Phase C fix 2026-08-20: CreateUiObject RectTransform uses GetComponent; blur runner cancel notifies waiter; dedicated MissionTreeBlurHost.",
+      "verificationStatus": "pass_2026-08-20"
+    },
+    {
+      "id": "quickmatch_official",
+      "description": "Career official match battle UI",
+      "inGameOverrides": "QuickMatchDemoController official mode: centered short control bar anchor approx 0.36-0.64, four controls timeout/pause/speed/skip, settings gear fixed bottom-right 0.905-0.985 outside bar, ROUND clock under top HUD via _clockText SetAsLastSibling. ApplyControlBarLayout(simulation) must pass simulation not !simulation. High-risk UTF-8 file: patch only via Tools/patch_*.py after backup_quickmatch.py.",
+      "verificationChecklist": [
+        "ApplyControlBarLayout(simulation) not negated",
+        "Settings button bottom-right not on short bar edge",
+        "Four controls centered in official short bar",
+        "_clockText visible under ROUND label",
+        "Skip triggers ShowOfficialResultFlow after stopping MatchLoop",
+        "UTF-8 Chinese anchors intact e.g. 擊殺廣播"
+      ],
+      "verificationStatus": "pass_2026-08-20",
+      "verificationNotes": "Phase C: verify_official_battle_ui.py green after updating Skip yield-return and bar anchors; Play Mode ApplyControlBarLayout(false) measured 0.36-0.64 / 0.018-0.095 and settings 0.905-0.985. ViewConeMesh CanvasRenderer added via Tools/patch_viewcone_canvasrenderer.py."
+    },
+    {
+      "id": "quickmatch_practice",
+      "description": "Sandbox/practice QuickMatch",
+      "inGameOverrides": "Wide control bar approx 0.12-0.88 with team toggles and next-match flow. Same high-risk file rules as quickmatch_official.",
+      "verificationChecklist": [
+        "ApplyControlBarLayout(true) shows wide practice bar",
+        "Team switch and match index controls visible",
+        "No regression to official layout constants when switching modes"
+      ],
+      "verificationStatus": "pass_2026-08-20",
+      "verificationNotes": "Phase C Play Mode ApplyControlBarLayout(true) measured 0.12-0.88 / 0.015-0.100."
+    },
+    {
+      "id": "settings_panel",
+      "description": "In-game settings overlay",
+      "inGameOverrides": "SettingsPanelPresentation E1-fix 2026-08-20: translucent glass CreateCard + solid white capsule CTAs with dark labels; exception button sizing preserved; no blur.",
+      "nextPilotOptions": {
+        "defaultRecommendation": "E1-fix glass frame + white solid capsule done 2026-08-20",
+        "options": [
+          {
+            "id": "opaque_only",
+            "label": "Maintain settings layout",
+            "summary": "Pre-D1 documentation-only baseline"
+          },
+          {
+            "id": "light_chrome",
+            "label": "Light chrome on panel only",
+            "summary": "Rounded corners on settings card; keep exception button metrics",
+            "status": "implemented_2026-08-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scripted_event",
+      "description": "Modal career event with options, toast, and news detail",
+      "inGameOverrides": "CareerScriptedEventPresentation B2 glass_pilot 2026-08-20: UiBackdropBlurCapture + DimTint + glow + rounded EventCard Shadow/OuterFrame with translucent EventGlassFill; tier chrome edge colors retained; option button font exception unchanged. Event toast top-right 0.62-0.985 opaque. D2 2026-08-20: NewsDetailOverlay mirrors B2 glass with NewsCard and NewsDetailBlurHost. firstPerson copy may use corner quotes per copyGuidelines. See structuralElements.scriptedEventModal. E2: option and news-close use solid white capsules with dark labels; font size exception retained.",
+      "verificationStatus": "pass_2026-08-20",
+      "nextPilotOptions": {
+        "defaultRecommendation": "B2 + D2 glass complete; toast opaque; E1 glass capsule limited to light_chrome surfaces",
+        "options": [
+          {
+            "id": "opaque_only",
+            "label": "Maintain gold-frame modal",
+            "summary": "Pre-B2 shipped style"
+          },
+          {
+            "id": "glass_pilot",
+            "label": "Glass event modal",
+            "summary": "UiBackdropBlurCapture on dim + rounded glass inner card; keep option button exception; recommended next visual pilot",
+            "status": "implemented_2026-08-20"
+          },
+          {
+            "id": "news_detail_glass",
+            "label": "Glass news detail overlay",
+            "summary": "Align NewsDetailOverlay with B2 blur and rounded glass NewsCard",
+            "status": "implemented_2026-08-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "career_community",
+      "description": "Community tab: social operations and post history",
+      "inGameOverrides": "CareerCommunityPresentation tab 社群; uses careerPanels rows and placeholders for fan trends chart."
+    },
+    {
+      "id": "career_ranking_intel",
+      "description": "Club intel overlay from ranking interactions",
+      "inGameOverrides": "Ranking intel E1-fix: glass translucent card + white solid capsule close."
+    },
+    {
+      "id": "career_coach_staff",
+      "description": "Coach staff tab and detail overlay",
+      "inGameOverrides": "Coach detail E1-fix: glass translucent card + white solid capsules for close/promote."
+    },
+    {
+      "id": "career_competition_register",
+      "description": "Competition registration confirm overlays",
+      "inGameOverrides": "Register overlays E1-fix: glass frames + white solid capsules."
+    },
+    {
+      "id": "career_competition_bracket",
+      "description": "HLTV-style bracket in competition detail",
+      "inGameOverrides": "CareerCompetitionBracketPresentation inside competition detail overlay."
+    },
+    {
+      "id": "career_player_standing",
+      "description": "Player standing status icons on roster rows",
+      "inGameOverrides": "CareerPlayerStandingPresentation icon tooltips; not a full screen."
+    },
+    {
+      "id": "map_ban_pick",
+      "description": "BO3 map veto presentation",
+      "inGameOverrides": "MapBanPick E1-fix: glass frame + white solid Start/Close capsules; map cards unchanged."
+    }
+  ],
+  "mapping": [
+    {
+      "reference": "overarchingStyle.background.colors[0]",
+      "inGame": "colorPalette.career.background",
+      "relationship": "aligned",
+      "notes": "Phase F/G 2026-08-21: career Bg unified to starry navy #27285C; ambient gold dimmed."
+    },
+    {
+      "reference": "overarchingStyle.background.colors[1]",
+      "inGame": "colorPalette.career.ambientGlow",
+      "relationship": "diverged_by_design",
+      "notes": "Reference deck uses vibrant electric-blue radial glow; in-game uses orange-gold Accent ambient via scattered radials over multi-layer navy gradient. Do not introduce large blue ambient fills on career shell/title."
+    },
+    {
+      "reference": "colorPalette.accentText",
+      "inGame": "colorPalette.career.accentGold",
+      "relationship": "diverged",
+      "notes": "Reference ice-blue headings vs shipped gold primary accent for CTAs and rank."
+    },
+    {
+      "reference": "colorPalette.glassPanels",
+      "inGame": "screens.mission_tree",
+      "relationship": "partialPilot",
+      "notes": "Mission tree overlay uses UIBlurBlit plus UiBackdropBlurCapture for open-time backdrop blur, rounded glass panels, and pill node rows. Club hub drawer explicitly does not adopt this glass stack; career shell and hub remain opaque purple."
+    },
+    {
+      "reference": "colorPalette.glassPanels",
+      "inGame": "screens.club_hub",
+      "relationship": "notAdopted",
+      "notes": "Hub drawer uses opaque Panel and PanelInner. B1 light_chrome pilot applied 2026-08-20. Glass blur only via screens.club_hub.nextPilotOptions glass_pilot if user explicitly requests."
+    },
+    {
+      "reference": "structuralElements.glassmorphismPanels",
+      "inGame": "inGameTokens.structuralElements.clubHubDrawer",
+      "relationship": "diverged",
+      "notes": "Pitch-deck frosted cards vs shipped left slide drawer with square opaque wells. Hub is information-dense management UI, not pitch-deck glass cards."
+    },
+    {
+      "reference": "colorPalette.accentText",
+      "inGame": "screens.club_hub header title",
+      "relationship": "diverged",
+      "notes": "Reference ice-blue headings vs hub title and section titles using career.accentGold via Accent and AddClubHubContentTitle. Do not switch hub headers to ice-blue without deliberate reskin."
+    },
+    {
+      "reference": "UiBackdropBlurCapture / UiRoundedRectUtility",
+      "inGame": "screens.club_hub",
+      "relationship": "candidate",
+      "notes": "Mission-tree glass infrastructure may be reused only if user picks light_chrome or glass_pilot from screens.club_hub.nextPilotOptions. Default: no hub visual pilot."
+    },
+    {
+      "reference": "typography.primaryHeading",
+      "inGame": "typography.titleEmphasis",
+      "relationship": "approximate",
+      "notes": "Reference Montserrat uppercase vs shipped GenYoMin2 zh-TW titles. Consider uppercase only for Latin marketing art, not in-game zh-TW headers."
+    },
+    {
+      "reference": "structuralElements.buttonsControls",
+      "inGame": "structuralElements.careerButtons",
+      "relationship": "unrelated",
+      "notes": "Reference decorative circular controls are not the career CreateActionButton system. Always follow buttonPolicy for interactive CTAs."
+    },
+    {
+      "reference": "layoutPrinciples.spacing",
+      "inGame": "layoutPrinciples.careerShell",
+      "relationship": "target",
+      "notes": "Both favor clear hierarchy and breathable layout; reference is more whitespace-heavy than dense career management panels."
+    },
+    {
+      "reference": "colorPalette.glassPanels",
+      "inGame": "screens.career_shell",
+      "relationship": "notAdopted",
+      "notes": "Career shell remains opaque purple HUD. Glass pilots: mission_tree and scripted_event B2; club_hub stays light_chrome only unless glass_pilot is explicitly requested."
+    },
+    {
+      "reference": "structuralElements.glassmorphismPanels",
+      "inGame": "inGameTokens.structuralElements.scriptedEventModal",
+      "relationship": "diverged",
+      "notes": "Shipped event modal uses B2 glass_pilot 2026-08-20: blur backdrop + rounded translucent card with tier-colored frames. Toast and news detail remain opaque siblings."
+    },
+    {
+      "reference": "structuralElements.glassmorphismPanels",
+      "inGame": "inGameTokens.structuralElements.careerShell",
+      "relationship": "notAdopted",
+      "notes": "Do not reskin entire career shell to pitch-deck glass; information density and tab rail conflict with reference whitespace model."
+    },
+    {
+      "reference": "overarchingStyle.background",
+      "inGame": "screens.career_world_map",
+      "relationship": "candidate",
+      "notes": "B3 glow_enhance implemented 2026-08-20: dual-layer radial hub glow without blur. Schedule and side panels remain opaque."
+    },
+    {
+      "reference": "structuralElements.solidCards",
+      "inGame": "screens.scripted_event option buttons",
+      "relationship": "approximate",
+      "notes": "White pill reference maps loosely to CreateActionButton rows; scripted_event keeps smaller font exception."
+    },
+    {
+      "reference": "QuickMatchDemoController",
+      "inGame": "screens.quickmatch_official",
+      "relationship": "documented",
+      "notes": "Visual style unchanged in Phase A. All edits must use Tools/patch_*.py UTF-8 workflow per exceptions.quickmatch_controller and AGENTS.md."
+    }
+  ]
+}

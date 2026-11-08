@@ -1,0 +1,23 @@
+            // Side KDA panels end above the bottom control bar (no empty overlap strip)
+            Image leftPanel = CreateUiObject<Image>("LeftStats", canvas.transform);
+            SetRect(leftPanel.rectTransform, new Vector2(0.008f, 0.112f), new Vector2(0.165f, 0.775f));
+            leftPanel.color = new Color(CtPanel.r, CtPanel.g, CtPanel.b, 0.78f);
+            _leftStatsPanel = leftPanel;
+            _leftTeamHeader = CreateText("LeftHeader", leftPanel.transform, 16, TextAnchor.MiddleLeft, TextPrimary);
+            SetRect(_leftTeamHeader.rectTransform, new Vector2(0.04f, 0.93f), new Vector2(0.40f, 0.995f));
+            _leftTeamHeader.fontStyle = FontStyle.Bold;
+            _leftMoneyText = CreateText("LeftMoney", leftPanel.transform, 12, TextAnchor.MiddleRight, TextPrimary);
+            SetRect(_leftMoneyText.rectTransform, new Vector2(0.40f, 0.93f), new Vector2(0.96f, 0.995f));
+
+            Image rightPanel = CreateUiObject<Image>("RightStats", canvas.transform);
+            SetRect(rightPanel.rectTransform, new Vector2(0.835f, 0.112f), new Vector2(0.992f, 0.775f));
+            rightPanel.color = new Color(TPanel.r, TPanel.g, TPanel.b, 0.78f);
+            _rightStatsPanel = rightPanel;
+            _rightTeamHeader = CreateText("RightHeader", rightPanel.transform, 16, TextAnchor.MiddleLeft, TextPrimary);
+            SetRect(_rightTeamHeader.rectTransform, new Vector2(0.04f, 0.93f), new Vector2(0.40f, 0.995f));
+            _rightTeamHeader.fontStyle = FontStyle.Bold;
+            _rightMoneyText = CreateText("RightMoney", rightPanel.transform, 12, TextAnchor.MiddleRight, TextPrimary);
+            SetRect(_rightMoneyText.rectTransform, new Vector2(0.40f, 0.93f), new Vector2(0.96f, 0.995f));
+
+            CreateStatSlots(leftPanel.transform, true);
+            CreateStatSlots(rightPanel.transform, false);

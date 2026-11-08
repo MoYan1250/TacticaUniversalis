@@ -1,0 +1,16 @@
+{
+  "name": "TacticaUniversalis.Tests.EditMode",
+  "rootNamespace": "TacticaUniversalis.Tests",
+  "references": [
+    "TacticaUniversalis.Domain",
+    "TacticaUniversalis.Application",
+    "TacticaUniversalis.Infrastructure"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "autoReferenced": false
+}

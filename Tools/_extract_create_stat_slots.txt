@@ -1,0 +1,135 @@
+        private void CreateStatSlots(Transform parent, bool leftSide)
+        {
+            List<Text> slots = leftSide ? _leftStatSlots : _rightStatSlots;
+            List<Text> roundKills = leftSide ? _leftRoundKillSlots : _rightRoundKillSlots;
+            List<StatMetricSlot[]> statuses = leftSide ? _leftStatusRows : _rightStatusRows;
+            List<Image> jerseys = leftSide ? _leftJerseyBadges : _rightJerseyBadges;
+            List<Text> jerseyNums = leftSide ? _leftJerseyNumbers : _rightJerseyNumbers;
+            List<Image> rows = leftSide ? _leftStatRows : _rightStatRows;
+            List<string> playerIds = leftSide ? _leftStatPlayerIds : _rightStatPlayerIds;
+            const float topStart = 0.91f;
+            const float bottomPad = 0.02f;
+            const float rowGap = 0.01f;
+            float rowHeight = (topStart - bottomPad - 4f * rowGap) / 5f;
+            float top = topStart;
+            for (int i = 0; i < 5; i++)
+            {
+                float bottom = top - rowHeight;
+                Image row = CreateUiObject<Image>("StatRow" + i, parent);
+                SetRect(row.rectTransform, new Vector2(0.05f, bottom), new Vector2(0.95f, top));
+                row.color = AliveRowBg;
+                row.raycastTarget = true;
+                rows.Add(row);
+                playerIds.Add(string.Empty);
+
+                int slotIndex = i;
+                bool sideIsLeft = leftSide;
+                EventTrigger trigger = row.gameObject.AddComponent<EventTrigger>();
+                AddPointerTrigger(trigger, EventTriggerType.PointerEnter, _ => OnStatRowPointerEnter(sideIsLeft, slotIndex));
+                AddPointerTrigger(trigger, EventTriggerType.PointerExit, _ => OnStatRowPointerExit(sideIsLeft, slotIndex));
+
+                // Small perfect circle jersey badge (side color applied in BindStatSlots).
+                Image badge = CreateUiObject<Image>("Jersey", row.transform);
+                badge.sprite = _circleSprite;
+                badge.color = CtText;
+                badge.raycastTarget = false;
+                badge.rectTransform.anchorMin = badge.rectTransform.anchorMax =
+                    leftSide ? new Vector2(0.10f, 0.70f) : new Vector2(0.90f, 0.70f);
+                badge.rectTransform.pivot = new Vector2(0.5f, 0.5f);
+                badge.rectTransform.sizeDelta = new Vector2(18f, 18f);
+                badge.rectTransform.anchoredPosition = Vector2.zero;
+                jerseys.Add(badge);
+
+                Text jerseyNum = CreateText("JerseyNum", badge.transform, 11, TextAnchor.MiddleCenter, TextPrimary);
+                Stretch(jerseyNum.rectTransform);
+                jerseyNum.fontStyle = FontStyle.Bold;
+                jerseyNum.raycastTarget = false;
+                jerseyNum.text = (i + 1).ToString();
+                jerseyNums.Add(jerseyNum);
+
+                Text line = CreateText("Line", row.transform, 16, leftSide ? TextAnchor.MiddleLeft : TextAnchor.MiddleRight, TextPrimary);
+                SetRect(line.rectTransform,
+                    leftSide ? new Vector2(0.18f, 0.34f) : new Vector2(0.28f, 0.34f),
+                    leftSide ? new Vector2(0.68f, 1f) : new Vector2(0.80f, 1f));
+                line.rectTransform.offsetMin = new Vector2(leftSide ? 2f : 4f, 0f);
+                line.rectTransform.offsetMax = new Vector2(leftSide ? -4f : -2f, -2f);
+                line.raycastTarget = false;
+                line.text = "—";
+                slots.Add(line);
+
+                Text rk = CreateText("RoundKills", row.transform, 20, TextAnchor.MiddleCenter, CtText);
+                SetRect(rk.rectTransform,
+                    leftSide ? new Vector2(0.70f, 0.42f) : new Vector2(0.02f, 0.42f),
+                    leftSide ? new Vector2(0.98f, 0.95f) : new Vector2(0.26f, 0.95f));
+                rk.fontStyle = FontStyle.Bold;
+                rk.raycastTarget = false;
+                rk.text = string.Empty;
+                roundKills.Add(rk);
+
+                statuses.Add(CreateStatusMetricRow(row.transform));
+
+                top = bottom - rowGap;
+            }
+        }
+
+        private StatMetricSlot[] CreateStatusMetricRow(Transform row)
+        {
+            Image root = CreateUiObject<Image>("StatusRow", row);
+            root.color = Color.clear;
+            root.raycastTarget = false;
+            SetRect(root.rectTransform, new Vector2(0.02f, 0.02f), new Vector2(0.98f, 0.34f));
+
+            const int frontCount = 3;
+            const int backCount = 3;
+            const float frontEnd = 0.48f;
+            const float backStart = 0.52f;
+            var metrics = new StatMetricSlot[frontCount + backCount];
+
+            for (int m = 0; m < frontCount; m++)
+            {
+                float x0 = (m / (float)frontCount) * frontEnd;
+                float x1 = ((m + 1) / (float)frontCount) * frontEnd;
+                metrics[m] = CreateMetricCell(root.transform, m, x0, x1, TextPrimary);
+            }
+
+            Image divider = CreateUiObject<Image>("Divider", root.transform);
+            divider.color = new Color(TextMuted.r, TextMuted.g, TextMuted.b, 0.35f);
+            divider.raycastTarget = false;
+            SetRect(divider.rectTransform, new Vector2(0.495f, 0.20f), new Vector2(0.505f, 0.80f));
+
+            for (int m = 0; m < backCount; m++)
+            {
+                int index = frontCount + m;
+                float span = 1f - backStart;
+                float x0 = backStart + (m / (float)backCount) * span;
+                float x1 = backStart + ((m + 1) / (float)backCount) * span;
+                metrics[index] = CreateMetricCell(root.transform, index, x0, x1, TextMuted);
+            }
+
+            return metrics;
+        }
+
+        private StatMetricSlot CreateMetricCell(
+            Transform parent, int index, float x0, float x1, Color tint)
+        {
+            Image cell = CreateUiObject<Image>("Metric" + index, parent);
+            cell.color = Color.clear;
+            cell.raycastTarget = false;
+            SetRect(cell.rectTransform, new Vector2(x0, 0f), new Vector2(x1, 1f));
+
+            Image icon = CreateUiObject<Image>("Icon", cell.transform);
+            icon.sprite = _statIcons != null && index < _statIcons.Length ? _statIcons[index] : null;
+            icon.preserveAspect = true;
+            icon.color = tint;
+            icon.raycastTarget = false;
+            SetRect(icon.rectTransform, new Vector2(0.02f, 0.18f), new Vector2(0.46f, 0.82f));
+
+            Text value = CreateText("Value", cell.transform, 10, TextAnchor.MiddleLeft, tint);
+            SetRect(value.rectTransform, new Vector2(0.48f, 0f), new Vector2(1f, 1f));
+            value.raycastTarget = false;
+            value.horizontalOverflow = HorizontalWrapMode.Overflow;
+            value.text = "--";
+
+            return new StatMetricSlot { Icon = icon, Value = value };
+        }
+

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "achievements": [
+    {
+      "id": "ach_first_steps",
+      "title": "新王朝起步",
+      "description": "開始一檔生涯並完成首次月結。",
+      "hardcoreOnly": false,
+      "triggers": [
+        { "type": "has_flag", "key": "month_closed_once" },
+        { "type": "not_achievement", "key": "ach_first_steps" }
+      ],
+      "rewards": [
+        { "type": "set_flag", "key": "achievement_first_steps", "durationDays": 0 },
+        { "type": "log", "key": "成就解鎖：新王朝起步" }
+      ]
+    },
+    {
+      "id": "ach_high_fame_club",
+      "title": "家喻戶曉",
+      "description": "將俱樂部名氣提升到 80 以上。",
+      "hardcoreOnly": false,
+      "triggers": [
+        { "type": "fame_min", "value": 80 },
+        { "type": "not_achievement", "key": "ach_high_fame_club" }
+      ],
+      "rewards": [
+        { "type": "set_flag", "key": "achievement_high_fame", "durationDays": 0 },
+        { "type": "add_fans", "value": 1000 },
+        { "type": "log", "key": "成就解鎖：家喻戶曉" }
+      ]
+    },
+    {
+      "id": "ach_high_prestige_club",
+      "title": "業界口碑",
+      "description": "將俱樂部威望提升到 80 以上。",
+      "hardcoreOnly": false,
+      "triggers": [
+        { "type": "exposure_min", "value": 80 },
+        { "type": "not_achievement", "key": "ach_high_prestige_club" }
+      ],
+      "rewards": [
+        { "type": "set_flag", "key": "achievement_high_prestige", "durationDays": 0 },
+        { "type": "add_board", "value": 5 },
+        { "type": "log", "key": "成就解鎖：業界口碑" }
+      ]
+    },
+    {
+      "id": "ach_ironman_survivor",
+      "title": "硬核求生",
+      "description": "硬核模式下存活並完成一次月結。",
+      "hardcoreOnly": true,
+      "triggers": [
+        { "type": "hardcore", "value": 1 },
+        { "type": "has_flag", "key": "month_closed_once" },
+        { "type": "not_achievement", "key": "ach_ironman_survivor" }
+      ],
+      "rewards": [
+        { "type": "set_flag", "key": "achievement_ironman_survivor", "durationDays": 0 },
+        { "type": "log", "key": "成就解鎖：硬核求生" }
+      ]
+    },
+    {
+      "id": "ach_major_champion",
+      "title": "Major 冠軍",
+      "description": "贏得一座 Major（需賽事結算寫入對應 flag）。",
+      "hardcoreOnly": true,
+      "triggers": [
+        { "type": "has_flag", "key": "won_major" },
+        { "type": "not_achievement", "key": "ach_major_champion" }
+      ],
+      "rewards": [
+        { "type": "set_flag", "key": "achievement_major_champion", "durationDays": 0 },
+        { "type": "add_fame", "value": 5 },
+        { "type": "add_exposure", "value": 5 },
+        { "type": "log", "key": "成就解鎖：Major 冠軍" }
+      ]
+    }
+  ]
+}

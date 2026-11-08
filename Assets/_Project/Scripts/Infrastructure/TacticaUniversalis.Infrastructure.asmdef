@@ -1,0 +1,9 @@
+{
+  "name": "TacticaUniversalis.Infrastructure",
+  "rootNamespace": "TacticaUniversalis.Infrastructure",
+  "references": [
+    "TacticaUniversalis.Domain",
+    "TacticaUniversalis.Application"
+  ],
+  "autoReferenced": true
+}

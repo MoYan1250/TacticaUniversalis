@@ -1,0 +1,3232 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {
+      "id": "board_worries_low_prestige",
+      "title": "董事會關切威望",
+      "description": "外界開始質疑俱樂部的形象與方向。董事會要求你表態：是公開承諾改革，還是先把成績做出來再說？",
+      "mtthDays": 75,
+      "isMajor": true,
+      "triggers": [
+        {
+          "type": "exposure_max",
+          "value": 35
+        },
+        {
+          "type": "not_flag",
+          "key": "cd_board_prestige"
+        }
+      ],
+      "options": [
+        {
+          "id": "pledge",
+          "label": "承諾改善形象",
+          "tooltip": "短期董事會壓力上升，但立下改革旗標。",
+          "effects": [
+            {
+              "type": "add_board",
+              "value": -4
+            },
+            {
+              "type": "add_estate",
+              "key": "public_opinion",
+              "value": -3
+            },
+            {
+              "type": "add_exposure",
+              "value": 2
+            },
+            {
+              "type": "set_flag",
+              "key": "pledged_image_reform",
+              "durationDays": 365
+            },
+            {
+              "type": "set_flag",
+              "key": "cd_board_prestige",
+              "durationDays": 180
+            }
+          ]
+        },
+        {
+          "id": "dismiss",
+          "label": "成績會說話",
+          "tooltip": "威望再跌一點，冷卻較短。",
+          "effects": [
+            {
+              "type": "add_exposure",
+              "value": -4
+            },
+            {
+              "type": "set_flag",
+              "key": "cd_board_prestige",
+              "durationDays": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "media_spotlight_high_fame",
+      "title": "媒體聚光燈",
+      "description": "俱樂部名氣高漲，媒體與品牌都想搭順風車。你要擴大曝光，還是謹慎保護戰隊節奏？",
+      "mtthDays": 100,
+      "isMajor": true,
+      "triggers": [
+        {
+          "type": "fame_min",
+          "value": 75
+        },
+        {
+          "type": "not_flag",
+          "key": "cd_media_spotlight"
+        }
+      ],
+      "options": [
+        {
+          "id": "embrace",
+          "label": "擁抱曝光",
+          "tooltip": "粉絲與名氣上升，但可能分心。",
+          "effects": [
+            {
+              "type": "add_fame",
+              "value": 3
+            },
+            {
+              "type": "add_fans",
+              "value": 2500
+            },
+            {
+              "type": "add_board",
+              "value": 2
+            },
+            {
+              "type": "add_estate",
+              "key": "public_opinion",
+              "value": 6
+            },
+            {
+              "type": "add_estate",
+              "key": "star_players",
+              "value": -2
+            },
+            {
+              "type": "set_flag",
+              "key": "media_blitz",
+              "durationDays": 120
+            },
+            {
+              "type": "set_flag",
+              "key": "cd_media_spotlight",
+              "durationDays": 200
+            }
+          ]
+        },
+        {
+          "id": "focus",
+          "label": "專心備戰",
+          "tooltip": "略降名氣熱度，換取安定。",
+          "effects": [
+            {
+              "type": "add_fame",
+              "value": -1
+            },
+            {
+              "type": "add_board",
+              "value": 3
+            },
+            {
+              "type": "add_estate",
+              "key": "coaching_staff",
+              "value": 4
+            },
+            {
+              "type": "add_estate",
+              "key": "public_opinion",
+              "value": -2
+            },
+            {
+              "type": "set_flag",
+              "key": "cd_media_spotlight",
+              "durationDays": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "obscurity_struggles",
+      "title": "寂寂無名",
+      "description": "俱樂部名氣偏低，連地區媒體都很少提及。是砸錢做社群，還是咬牙靠賽場證明自己？",
+      "mtthDays": 80,
+      "isMajor": true,
+      "triggers": [
+        {
+          "type": "fame_max",
+          "value": 35
+        },
+        {
+          "type": "not_flag",
+          "key": "cd_obscurity"
+        }
+      ],
+      "options": [
+        {
+          "id": "campaign",
+          "label": "發起曝光活動",
+          "tooltip": "花費現金換取名氣、粉絲與輿論支持。",
+          "effects": [
+            {
+              "type": "add_cash",
+              "value": -25000
+            },
+            {
+              "type": "add_fame",
+              "value": 4
+            },
+            {
+              "type": "add_fans",
+              "value": 1800
+            },
+            {
+              "type": "set_flag",
+              "key": "cd_obscurity",
+              "durationDays": 150
+            },
+            {
+              "type": "add_estate",
+              "key": "public_opinion",
+              "value": 4
+            },
+            {
+              "type": "add_board",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "endure",
+          "label": "靠成績說話",
+          "tooltip": "不花錢，但名氣與輿論暫時更難起色。",
+          "effects": [
+            {
+              "type": "add_fame",
+              "value": -1
+            },
+            {
+              "type": "set_flag",
+              "key": "grind_for_recognition",
+              "durationDays": 200
+            },
+            {
+              "type": "set_flag",
+              "key": "cd_obscurity",
+              "durationDays": 100
+            },
+            {
+              "type": "add_estate",
+              "key": "public_opinion",
+              "value": -2
+            },
+            {
+              "type": "add_board",
+              "value": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "game_version_update",
+      "title": "遊戲版本更新",
+      "description": "官方釋出重大版本更新，戰術環境與數據基準改變。分析師需要重新消化新版本資訊，既有對手數據積累會下降。",
+      "mtthDays": 200,
+      "isMajor": true,
+      "triggers": [
+        {
+          "type": "not_flag",
+          "key": "cd_game_version"
+        }
+      ],
+      "options": [
+        {
+          "id": "adapt",
+          "label": "督促分析組適應",
+          "tooltip": "數據積累下降；高版本適應的分析師損失較少。",
+          "effects": [
+            {
+              "type": "game_version_update"
+            },
+            {
+              "type": "set_flag",
+              "key": "cd_game_version",
+              "durationDays": 180
+            },
+            {
+              "type": "add_estate",
+              "key": "coaching_staff",
+              "value": -2
+            },
+            {
+              "type": "add_estate",
+              "key": "management",
+              "value": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hist_olofmeister_faze_bench_2021_01_04",
+      "title": "olofmeister回歸FaZe替補",
+      "tier": 5,
+      "isMajor": false,
+      "fireHour": 72,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "faze_2021",
+      "description": "FaZe Clan在NiKo離隊轉投G2之後，戰績持續下滑。管理層在尋找解決方案的過程中，決定召回老將olofmeister作為替補，填補NiKo離隊後留下的空缺。據悉，隊伍曾接觸過f0rest，但最終未能成行。olofmeister的回歸被普遍視為短期救火方案，而非長期規劃。這位兩屆Major冠軍得主曾在2017年隨隊闖入波士頓Major決賽，隊伍希望借助他的經驗來穩定當前的混亂局面。",
+      "firstPersonDescription": "在NiKo離隊轉投G2之後，我們的陣容出現了明顯的缺口。戰績持續下滑之際，管理層不得不尋找緊急方案來穩定局面。olofmeister的名字再次被提起，這位曾在2017年隨隊闖入波士頓Major決賽的老將，雖然一度被認為即將退役，但我們仍然選擇啟動這項短期救援計畫。他以替補身分回歸，填補NiKo離隊後留下的空缺。這不是一筆長期投資，而是一場為了止血的緊急措施，我們需要他的經驗與殘存的威懾力來渡過這段動盪期。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "dismiss",
+          "label": "不過是垂死掙扎，不值一提。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "last_chip",
+          "label": "這或許是他們最後的籌碼了。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "watch",
+          "label": "靜觀其變，不置一詞。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "accept",
+          "label": "我們別無選擇。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "olofmeister",
+          "squadStatus": "bench",
+          "clubId": ""
+        }
+      ]
+    },
+    {
+      "id": "hist_get_right_retires_2021_01_24",
+      "title": "GeT_RiGhT正式宣布退役，轉型全職直播",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 552,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "nip_2021",
+      "description": "GeT_RiGhT正式告別職業賽場，結束了他長達十三年的CS職業生涯。這位曾在2013與2014年蟬聯HLTV年度TOP1的瑞典傳奇，在NiP度過了職業生涯的黃金時期，與f0rest等人共同締造了前無古人的八十七張地圖連勝紀錄，並在2014年ESL One科隆Major奪冠。然而長期的健康問題，包括2012年被診斷的克羅恩氏病，以及心理健康方面的困擾，最終迫使他做出退役的決定。他拒絕使用退役一詞，表示未來不排除重返賽場的可能，但現階段將轉向全職直播與內容創作。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "respect",
+          "label": "一代傳奇，理應獲得這樣的終章。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "relief",
+          "label": "這對我們而言，不過少了一個需要畏懼的名字。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "history",
+          "label": "歷史會記住他，但戰場不會等他。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": []
+    },
+    {
+      "id": "hist_valve_rmr_roster_tax_2021_01_27",
+      "title": "V社宣布RMR積分新制，人員替換將扣除20%積分",
+      "tier": 2,
+      "isMajor": true,
+      "fireHour": 624,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "",
+      "description": "Valve公布了新的RMR賽事規則，其中最重要的變革是隊伍進行人員替換時將被扣除百分之二十的RMR積分。若替換達到三人，積分將直接歸零。新規同時允許註冊六人名單，替補選手可獨立於教練之外登記，但首次名單更新即觸發扣分。教練在線上賽期間被禁止與選手即時溝通，僅能在回合間或賽後恢復交流。這項新制將深刻影響所有隊伍的Major備戰策略。",
+      "firstPersonDescription": "Valve發布了新的RMR賽事規則，其中最重要的一項變革將直接影響我們的陣容決策。根據公告，隊伍進行人員替換時將被扣除百分之二十的RMR積分，這意味著每一次換人都可能成為賭上Major門票的豪賭。同時，新規允許隊伍註冊六人名單，替補選手可獨立於教練之外進行登記，但首次名單更新時便會觸發積分扣除。此外，線上賽期間教練被禁止與選手進行即時溝通，僅能在回合間或比賽後恢復交流。這些規定從根本上改變了我們的備戰方式。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "opportunity",
+          "label": "這對我們而言或許是個機會。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "obey",
+          "label": "規則已定，抱怨無用。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "criticize",
+          "label": "他們正在親手扼殺這項運動的靈活性。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "endure",
+          "label": "我們接受這道枷鎖，並將在束縛中求生。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "submit",
+          "label": "沒有商量的餘地，只能服從。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_twistzz_to_faze_2021_01_31",
+      "title": "Twistzz轉會FaZe",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 720,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "faze_2021",
+      "description": "FaZe Clan正式簽下Twistzz，這位前Liquid選手將取代Kjaerbye的位置進入先發陣容。Twistzz在Liquid時期曾兩度入選HLTV年度TOP20，並隨隊拿下九座冠軍，但2020年表現有所下滑。加盟FaZe後，他表示有信心重回巔峰並成為TOP5選手。這筆轉會被認為是FaZe重組計畫的開端，下一步預計是簽下一名新的指揮官。Kjaerbye則被下放至替補席，未來動向尚不明朗。",
+      "firstPersonDescription": "Twistzz正式完成簽約，這名年僅二十一歲的加拿大選手將加入我們的陣容，同時Kjaerbye被下放至替補席。Twistzz曾在Liquid證明過自己的實力，在2018與2019年兩度入選HLTV年度TOP20，並幫助隊伍拿下九座冠軍獎盃。我們希望他能成為新的火力輸出點，填補NiKo離隊後留下的空缺。這筆交易是我們重組計畫的第一步，後續可能還有進一步的調整。據傳karrigan的合約即將到期，我們正在評估各種可能性。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "uneasy",
+          "label": "他們正在組建一支令人不安的隊伍。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "money",
+          "label": "這不過是另一場金錢遊戲罷了。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "scout",
+          "label": "我們最好開始研究他們的比賽錄像。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "welcome",
+          "label": "歡迎他加入，這是我們邁向巔峰的第一步。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "era",
+          "label": "這筆交易將定義我們的時代。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 3
+        },
+        {
+          "type": "add_fame",
+          "value": 2
+        },
+        {
+          "type": "add_fans",
+          "value": 1500
+        },
+        {
+          "type": "add_board",
+          "value": 2
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": 3
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": 2
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "kjaerbye",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "join_club",
+          "playerId": "Twistzz",
+          "clubId": "faze_2021",
+          "squadStatus": "starter"
+        }
+      ]
+    },
+    {
+      "id": "hist_valve_rmr_overhaul_2021_02_03",
+      "title": "RMR賽事規則大改",
+      "tier": 2,
+      "isMajor": true,
+      "fireHour": 792,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "",
+      "description": "Valve發布了完整的規則手冊，對Major參賽資格的決定方式進行了重大改革。RMR積分制已被廢除，改為每個賽區僅在Major前舉辦一次RMR賽事來決定所有名額，隊伍不再有賽後調整陣容的空間。線下RMR賽事合併為歐洲、美洲、亞洲三大賽區，線上則恢復為五個賽區。各賽區名額將依據前一屆Major表現分配，打入冠軍階段的隊伍為其賽區確保傳奇組席位，進入傳奇組則確保挑戰組席位，競爭組席位保持固定。歐洲賽區獲得七個傳奇組、六個挑戰組及三個競爭組席位，美洲賽區獲得一個傳奇組、兩個挑戰組及三個競爭組席位，亞洲賽區則獲得兩個競爭組席位。這項改革將深刻影響所有隊伍的Major備戰策略。",
+      "firstPersonDescription": "Valve發布了完整的規則手冊，徹底改革了Major參賽資格的決定方式。沿用兩年的RMR積分制已被廢除，現在每個賽區僅在Major前舉辦一次RMR賽事來決定所有名額，隊伍不再有賽後調整陣容的空間。線下RMR賽事合併為歐洲、美洲、亞洲三大賽區，若轉為線上則恢復為五個賽區。各賽區名額將依據前一屆Major的表現來分配，打入冠軍階段的隊伍為其賽區確保傳奇組席位，進入傳奇組則確保挑戰組席位，競爭組席位則保持固定。歐洲賽區獲得七個傳奇組、六個挑戰組及三個競爭組席位，美洲賽區獲得一個傳奇組、兩個挑戰組及三個競爭組席位，亞洲賽區則獲得兩個競爭組席位。這套新制從根本上改變了我們的備戰方式，每一次決策都將直接影響Major門票。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "opportunity",
+          "label": "這對我們而言或許是個機會。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "reeval",
+          "label": "新的秩序正在形成，我們需要重新評估局勢。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "strong",
+          "label": "無論規則如何改變，強者終將脫穎而出。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "accept",
+          "label": "我們接受這套新規則，並將在框架內尋求最大優勢。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "obey",
+          "label": "規則已定，只能服從並適應。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_autimatic_to_valorant_2021_02_04",
+      "title": "Autimatic轉戰Valorant",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 816,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "",
+      "description": "Autimatic正式告別CS:GO，宣布加入T1的Valorant戰隊。這位二十四歲的美國選手在長達七年的CS職業生涯中，曾效力於Cloud9、TSM等知名隊伍，最輝煌的時刻當屬2018年隨Cloud9在ELEAGUE波士頓Major奪冠，並在2016年ESL Pro League第四季總決賽中獲得MVP，2018年更入選HLTV年度TOP20榜單第十七名。他在Gen.G解散後曾與flusha、suNny計畫組建新隊伍，但因缺乏電競組織的投資而告吹，最終選擇轉戰Valorant。他將與前Cloud9隊友Skadoodle在T1重逢，該隊陣容還包括brax、AZK、DaZeD等知名選手。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "wave",
+          "label": "又一位明星選手選擇離開，這股浪潮恐怕還會持續。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "relief",
+          "label": "對我們而言，少了一個需要警惕的對手。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "eco",
+          "label": "Valorant的崛起正在改變整個射擊遊戲生態。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": []
+    },
+    {
+      "id": "hist_north_shutdown_2021_02_05",
+      "title": "North停止運營",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 840,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "",
+      "description": "丹麥電競組織North正式宣布停止運營，成為新冠疫情下又一受害者。這支成立於2017年的隊伍，由Parken Sport & Entertainment（同時經營丹麥足球豪門哥本哈根FC）與Nordisk Film共同持有。兩家投資者因疫情造成的財務壓力決定撤回資金，專注於核心業務，儘管North曾在國際賽場上贏得超過百萬美元的獎金，仍未能找到接手的投資人。North的CS:GO與Apex Legends部門全數解散，FIFA部門則由哥本哈根FC接管並繼續參與丹麥eSuperliga聯賽。丹麥CS版圖上的一頭雄獅就此倒下。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "lament",
+          "label": "丹麥CS的損失，令人惋惜。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "next",
+          "label": "疫情改變了太多事情，誰會是下一個？",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "market",
+          "label": "他們的選手將流入市場，或許我們可以從中獲益。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": []
+    },
+    {
+      "id": "hist_dexter_to_mouz_2021_02_11",
+      "title": "mousesports引入dexter擔任指揮",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 984,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "mouz_2021",
+      "description": "mousesports正式宣布簽下前Renegades指揮dexter，取代karrigan的先發位置。這位二十六歲的澳洲選手自2020年三月以來帶領Renegades在大洋洲賽場取得統治級表現，連奪十座冠軍，全年個人評分高達1.20，展現了不俗的個人火力。dexter將在IEM卡托維茲小組賽中首次代表mousesports出戰，對手正是老東家Renegades。karrigan則被下放至替補席，合約將於三月到期，外界普遍猜測他可能回歸FaZe。",
+      "firstPersonDescription": "我們正式簽下前Renegades的指揮dexter，取代karrigan的位置。這位二十六歲的澳洲選手自2020年三月以來帶領Renegades橫掃大洋洲賽場，連奪十座冠軍獎盃，全年個人評分高達1.20，打破了指揮官槍法疲軟的刻板印象。dexter將在IEM卡托維茲小組賽中代表我們首次出戰，對手正是他的老東家Renegades。至於karrigan的合約將於三月到期，他的未來動向尚在評估中。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "energy",
+          "label": "這筆交易或許能為他們注入新的活力。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "adapt",
+          "label": "一位澳洲指揮登陸歐洲，值得觀察他的適應能力。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "rebuild",
+          "label": "他們正在為重建鋪路。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "welcome",
+          "label": "歡迎dexter加入，這是指揮位置上的關鍵補強。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "tactics",
+          "label": "我們需要新的戰術思維，希望他能帶來改變。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 2
+        },
+        {
+          "type": "add_board",
+          "value": 1
+        },
+        {
+          "type": "add_estate",
+          "key": "coaching_staff",
+          "value": 2
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "karrigan",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "join_club",
+          "playerId": "dexter",
+          "clubId": "mouz_2021",
+          "squadStatus": "starter"
+        }
+      ]
+    },
+    {
+      "id": "hist_olofmeister_inactive_faze_2021_02_15",
+      "title": "olofmeister暫別賽場，離開FaZe首發",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 1080,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "faze_2021",
+      "description": "olofmeister在BLAST Premier春季小組賽結束後確認離隊，這位兩屆Major冠軍得主與2015年年度最佳選手將暫別賽場。他在推特上表示這不是他想要的結局，但尚未決定是否退役。FaZe Clan隨後發布聲明感謝這位瑞典老將近四年來的貢獻，包括2017年ESL One紐約站、ELEAGUE Premier及ECS第四季總決賽的三座冠軍，以及2018年EPICENTER的勝利。olofmeister目前仍與俱樂部保持合約關係，已被移至替補席。",
+      "firstPersonDescription": "olofmeister在BLAST Premier春季小組賽結束後確認，這是他代表我們出戰的最後一場賽事。他在推特上表示這不是他想要的結局，但他將暫時離開賽場，為未來做打算。他尚未決定是否就此退役，僅表示會在近期更新下一步規劃。FaZe官方隨後發布聲明感謝這位瑞典老將近四年來的貢獻，包括2017年ESL One紐約站、ELEAGUE Premier及ECS第四季總決賽的三座冠軍，以及2018年EPICENTER的勝利。olofmeister目前仍與俱樂部保持合約關係，但已被移至替補席，處於非活躍狀態。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "loss",
+          "label": "又一位傳奇暫時離開，這對整個CS生態都是一個損失。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "return",
+          "label": "這不是退役，他或許還會回來。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "prepare",
+          "label": "他們正在進行大規模重組，我們最好做好應對準備。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝他多年來的付出，祝福他未來一切順利。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "era",
+          "label": "這是一個時代的結束，我們將帶著他的精神繼續前進。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "veterans",
+          "value": -2
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "olofmeister",
+          "squadStatus": "bench",
+          "clubId": ""
+        }
+      ]
+    },
+    {
+      "id": "hist_karrigan_returns_faze_2021_02_15",
+      "title": "karrigan回歸FaZe",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 1081,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "faze_2021",
+      "description": "FaZe Clan正式宣布karrigan回歸，這位丹麥指揮在離開mousesports後重返他曾在2016年至2018年率領奪得七座大型賽事冠軍的老東家。karrigan表示此次回歸的最大目標是填補2018年波士頓Major決賽中輸給Cloud9的遺憾，當時他們在手握四個賽點的情況下被逆轉。他將在IEM卡托維茲中與rain重聚，後者是當年陣容中唯一仍在隊伍的選手，同時也將與教練RobbaN再度合作。",
+      "firstPersonDescription": "我們正式宣布Finn karrigan Andersen重返隊伍，這位丹麥指揮將在IEM卡托維茲中首次亮相。karrigan曾在2016年至2018年間率領我們奪得七座大型賽事冠軍，並一度登上世界排名第一的寶座。他表示此次回歸的最大目標是填補2018年波士頓Major決賽中輸給Cloud9的遺憾，當時他們在手握四個賽點的情況下被逆轉。他將與rain重聚，後者是當年那支隊伍中唯一仍在陣中的選手，同時也將與教練RobbaN再度合作。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "track",
+          "label": "這筆交易可能讓他們重回正軌。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "unknown",
+          "label": "他回到老東家，但能否複製過去的成功仍是未知數。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "scout",
+          "label": "我們需要開始研究這支新FaZe的比賽風格。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "welcome",
+          "label": "歡迎回家，這正是我們需要的領導者。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "fight",
+          "label": "他的回歸將重新點燃我們的鬥志，為奪回失去的一切而戰。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 4
+        },
+        {
+          "type": "add_fame",
+          "value": 2
+        },
+        {
+          "type": "add_board",
+          "value": 3
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": 3
+        },
+        {
+          "type": "add_estate",
+          "key": "coaching_staff",
+          "value": 2
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "join_club",
+          "playerId": "karrigan",
+          "clubId": "faze_2021",
+          "squadStatus": "starter"
+        }
+      ]
+    },
+    {
+      "id": "hist_astralis_seven_man_2021_02_17",
+      "title": "Astralis啟動七人輪換制",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 1128,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "astralis_2021",
+      "description": "Astralis在IEM卡托維茲的陣容名單中加入了青訓選手vester，正式將隊伍擴充至七人。體育總監Kasper Hvidt表示這是組織長期規劃的一部分，青訓隊正在對主隊產生影響，但vester短期內不會獲得上場機會，因為他尚未達到世界頂尖選手的層級。只有在兩名主力無法出戰的極端情況下，他才會被考慮上場。這支青訓隊由知名選手vnG率領。",
+      "firstPersonDescription": "我們在IEM卡托維茲提交的陣容名單中加入了青訓選手vester，正式將陣容拓展至七人。這項決策是組織長期規劃的一部分，我們希望讓年輕選手近距離感受一線隊的運作方式。體育總監Kasper Hvidt表示，vester短期內不會獲得上場機會，畢竟他尚未達到世界頂尖水準，但若出現兩名主力選手無法出戰的極端情況，他將成為備選方案。這支青訓隊由知名選手vnG率領，目前在Elgiganten Ligaen Season16中的成績是四勝七負，名列第十。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "decline",
+          "label": "這或許是丹麥王朝衰落的開端。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "watch",
+          "label": "他們正在試驗新的團隊模式，值得觀察。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "unknown",
+          "label": "七人輪換制能否奏效仍是未知數。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "academy",
+          "label": "這是我們為未來布局的一步，青訓隊正在對主隊產生影響。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "verify",
+          "label": "多人輪換制度需要時間驗證其效果。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireEffects": [
+        {
+          "type": "add_fame",
+          "value": 1
+        },
+        {
+          "type": "add_board",
+          "value": -1
+        },
+        {
+          "type": "add_estate",
+          "key": "reserves",
+          "value": 3
+        },
+        {
+          "type": "add_estate",
+          "key": "coaching_staff",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "hist_gambit_iem_katowice_2021_02_21",
+      "title": "Gambit奪得IEM卡托維茲冠軍",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 1224,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "gambit_2021",
+      "description": "Gambit在IEM卡托維茲總決賽中以三比一擊敗Virtus.pro，奪得隊史首座百萬美元級別賽事冠軍。這支獨聯體黑馬在賽前世界排名僅第十九位，一路從入圍賽打起，先後擊敗了mousesports、Heroic、G2 Esports等強隊，並在淘汰賽階段戰勝NaVi與Team Spirit。總決賽中，sh1ro以卓越的個人表現拿下MVP獎項，CIS地區迎來了他們的又一支世界級強隊。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "competition_champion",
+          "key": "iem_xv_world_championship:gambit_2021"
+        }
+      ],
+      "options": [
+        {
+          "id": "congrats",
+          "label": "恭喜他們，這是一場令人敬佩的勝利。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "rank",
+          "label": "他們證明了排名只是數字。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "cis",
+          "label": "CIS地區的統治力正在形成，這值得警惕。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [],
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 7
+        },
+        {
+          "type": "add_fame",
+          "value": 5
+        },
+        {
+          "type": "add_fans",
+          "value": 8000
+        },
+        {
+          "type": "add_board",
+          "value": 5
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": 6
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": "hist_g2_kennys_benched_2021_03_04",
+      "title": "G2下放kennyS，JACKZ回歸首發",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 1512,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "g2_2021",
+      "description": "G2 Esports宣布將傳奇狙擊手kennyS下放至替補席，同時讓JACKZ回歸首發陣容。kennyS自2017年加入G2以來，為隊伍贏得三座冠軍並在賽事中獲評MVP，然而近三個月個人平均rating僅0.98，表現出現明顯下滑。教練maLeK表示這是為了讓隊伍找到新的平衡，NiKo將承擔狙擊手職責。kennyS本人則表示仍會繼續活躍在CS領域，尋找新的隊伍延續職業生涯。",
+      "firstPersonDescription": "我們在今天對CSGO陣容做出調整，Kenny Schrub將被下放至替補席，Audric JACKZ Jug則回到首發陣容。kennyS自2017年隨法國夢之隊重組加入G2以來，為我們贏得DreamHack圖爾公開賽、DreamHack馬爾默大師賽及EPL第五賽季三座冠軍，並在三項賽事中均獲MVP殊榮。然而近期隊伍表現未達預期，在IEM卡托維茲被Gambit淘汰後，管理層與教練組經過討論做出了這項決定。NiKo將同時承擔步槍手與狙擊手的混合角色，我們認為這套陣容能為隊伍帶來新的平衡與靈活性。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "era_end",
+          "label": "這或許是法國CS時代結束的開端。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "risky",
+          "label": "讓NiKo扛狙擊槍，這步棋走得很冒險。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "rmr",
+          "label": "他們正在為RMR積分賽做最後的陣容定調。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "hard",
+          "label": "這是艱難的決定，但我們相信這能讓隊伍找回競爭力。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "thanks",
+          "label": "感謝kennyS多年來的貢獻，祝福他找到新的機會。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -3
+        },
+        {
+          "type": "add_fame",
+          "value": -1
+        },
+        {
+          "type": "add_board",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -3
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "kennyS",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "join_club",
+          "playerId": "JACKZ",
+          "clubId": "g2_2021",
+          "squadStatus": "starter"
+        }
+      ]
+    },
+    {
+      "id": "hist_coach_bug_enforcement_2021_03_05",
+      "title": "教練觀戰bug爭議進入後續執行階段",
+      "tier": 2,
+      "isMajor": true,
+      "fireHour": 1536,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "",
+      "description": "ESIC針對教練觀戰bug事件的調查進入後續執行階段。自2020年8月事件曝光以來，已有超過三十名教練因濫用觀戰系統漏洞被調查與處罰。Valve宣布，使用觀戰bug的教練將被禁止參加Valve贊助的賽事，禁賽場次從一場到全部Major不等，視違規次數而定。此外，線上比賽期間教練被禁止與選手進行即時交流，僅能在回合間或賽後恢復溝通。ESIC表示已收到超過百件不當行為檢舉，目前仍有案件在調查中。",
+      "firstPersonDescription": "ESIC針對教練觀戰bug事件的調查進入了新的階段。自2020年9月事件曝光以來，已有數十名教練被認定在比賽中利用觀戰系統漏洞獲取不正當優勢。Valve跟進宣布，使用觀戰bug的教練將被禁止參加未來由Valve贊助的賽事，具體封禁時長依情節輕重而定，最嚴重者將被禁賽所有Major場次。同時，線上賽期間嚴禁教練及其他工作人員進入對戰房間或與選手進行即時交流。這套新規將從根本上改變賽場內外的運作秩序。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "redefine",
+          "label": "這將徹底改變教練角色的定位。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "fairness",
+          "label": "調查結果的公正性仍有待檢驗。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "adapt",
+          "label": "新規對所有隊伍一視同仁，我們只能適應。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "accept",
+          "label": "我們接受這項裁決，並將嚴格遵守新規。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "obey",
+          "label": "沒有討價還價的餘地，只能服從。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireEffects": [
+        {
+          "type": "add_estate",
+          "key": "coaching_staff",
+          "value": -3
+        },
+        {
+          "type": "add_estate",
+          "key": "management",
+          "value": -1
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "id": "hist_nip_device_rumor_2021_03_15",
+      "title": "device轉會的轉會傳聞",
+      "tier": 6,
+      "isMajor": false,
+      "fireHour": 1776,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "nip_2021",
+      "description": "關於device可能離開Astralis並加入NiP的傳聞開始在社群中流傳。消息來源稱這位丹麥巨星正在考慮轉會至瑞典俱樂部，原因是個人因素，他希望能待在斯德哥爾摩。但官方當前沒有證實，可信度較低。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [],
+      "firstPersonOptions": []
+    },
+    {
+      "id": "hist_cloud9_colossus_fail_2021_03_26",
+      "title": "Cloud9巨像計劃宣布失敗，CSGO部門解散",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 2040,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "cloud9_2021",
+      "description": "Cloud9宣布暫時中止CSGO部門的營運，全體選手被移至替補席並開放轉會。這支被總經理HenryG命名為巨像的歐洲混編陣容，從一開始便面臨重重困難。疫情導致隊伍無法按原計劃在北美集結，遠程訓練效果不佳，加上woxic的高延遲與時區問題始終未能解決。隊伍在賽場上的成績也未達預期，世界排名最高僅第十九位，始終無法突破賽事八強。HenryG隨後宣布將暫時離開電競圈，Cloud9則表示未來仍有意重返CS，但可能回歸以北美選手為核心的建隊方向。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "fail",
+          "label": "耗費百萬美元的歐洲實驗以失敗告終。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "pandemic",
+          "label": "疫情改變了一切，他們只是眾多受害者之一。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "market",
+          "label": "這些選手流入市場，或許我們可以從中獲益。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [],
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -8
+        },
+        {
+          "type": "add_fame",
+          "value": -5
+        },
+        {
+          "type": "add_fans",
+          "value": -3000
+        },
+        {
+          "type": "add_board",
+          "value": -8
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -6
+        },
+        {
+          "type": "add_estate",
+          "key": "management",
+          "value": -4
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "request_transfer",
+          "playerId": "alex",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "request_transfer",
+          "playerId": "woxic",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "request_transfer",
+          "playerId": "es3tag",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "request_transfer",
+          "playerId": "floppy",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "request_transfer",
+          "playerId": "mezii",
+          "squadStatus": "bench",
+          "clubId": ""
+        }
+      ]
+    },
+    {
+      "id": "hist_train_out_ancient_in_2021_04_05",
+      "title": "Train正式移出比賽圖池，Ancient加入",
+      "tier": 2,
+      "isMajor": true,
+      "fireHour": 2256,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "",
+      "firstPersonReserved": false,
+      "onFireRosterMapId": "Train",
+      "onFireRosterMinGrade": "S",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -1
+        },
+        {
+          "type": "add_estate",
+          "key": "coaching_staff",
+          "value": -2
+        },
+        {
+          "type": "set_flag",
+          "key": "train_pool_removed",
+          "durationDays": 0
+        }
+      ],
+      "description": "Valve在狂牙大行動結束後宣布Train被移出現役地圖池，由Ancient正式取代。這是自2019年3月Vertigo取代Cache以來，官方首次對現役地圖池進行調整。Train在職業比賽中的選擇率僅百分之四點一七，在服役地圖中排名倒數第二。Ancient在加入前已進行多處調整，包括CT出生點通往A點的新路線、中路左側T入口的拓寬、A點Tunnel天窗的開放、B點炸彈安置區的延伸以及A點邊緣的開放等。接下來幾週的RMR賽事仍將沿用舊地圖池，新地圖池將在這些賽事結束後正式啟用。",
+      "firstPersonDescription": "Valve在狂牙大行動結束後宣布了現役地圖池的更換決定，Train被移出，Ancient正式加入。這是自2019年3月Vertigo取代Cache以來，官方首次對現役地圖池進行調整。Train在職業比賽中的選擇率僅百分之四點一七，在所有地圖中排名倒數第二，僅高於Vertigo。Valve同時對Ancient進行了多處調整，包括CT出生點通往A點的新路線、中路左側T入口的拓寬、A點Tunnel天窗的開放、B點炸彈安置區的延伸以及A點邊緣的開放等。這項變革將影響所有隊伍的戰術體系與練圖策略，我們必須盡快適應這張新地圖。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "redefine",
+          "label": "這項變革將重新定義職業賽場的戰術版圖。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "test",
+          "label": "地圖池的更動對所有隊伍都是一次考驗。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "nostalgia",
+          "label": "經典地圖的退役總是令人感慨。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "accept",
+          "label": "我們接受這項變革，並將投入時間研究Ancient。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "reshuffle",
+          "label": "地圖池的更動將重新洗牌各隊的戰術儲備。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "blow",
+          "label": "這對擅長Train的隊伍而言是一個沉重的打擊。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonRosterMapId": "Train",
+      "firstPersonRosterMinGrade": "A"
+    },
+    {
+      "id": "hist_b1t_replaces_flamie_navi_2021_04_11",
+      "title": "b1t正式取代flamie成為NAVI主力",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 2400,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "navi_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 1
+        },
+        {
+          "type": "add_board",
+          "value": 2
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": 2
+        },
+        {
+          "type": "add_estate",
+          "key": "reserves",
+          "value": 1
+        },
+        {
+          "type": "add_estate",
+          "key": "veterans",
+          "value": -1
+        }
+      ],
+      "description": "NAVI宣布由青訓選手b1t正式取代flamie成為先發陣容的固定成員。這項決策主要是為了因應Valve的RMR新制，由於人員替換將扣除積分，隊伍必須在兩位選手中做出最終選擇。教練B1ad3透露flamie近期承受巨大的心理壓力，即使有心理醫生協助也未能恢復狀態，因此需要暫時休息。NAVI將於4月11日至24日在基輔進行集訓，新陣容將於DreamHack春季大師賽首次亮相。",
+      "firstPersonDescription": "我們正式決定讓b1t取代flamie成為先發陣容的固定成員。這項決策主要是為了因應Valve的RMR新制，由於人員替換將扣除百分之二十的RMR積分，我們必須在b1t與flamie之間做出最終選擇。教練B1ad3表示，flamie近期承受著巨大的心理壓力，即使有心理醫生的協助也未能恢復最佳狀態，為了隊伍的發展，他需要暫時休息並重新調整心態。b1t此前已在多場賽事中輪換上場，展現出令人期待的潛力。我們將以這套固定的五人陣容備戰接下來的DreamHack春季大師賽與RMR賽事。",
+      "triggers": [
+        {
+          "type": "any",
+          "conditions": [
+            {
+              "type": "not_player_club",
+              "key": "navi_2021"
+            },
+            {
+              "type": "has_flag",
+              "key": "navi_path_b1t"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "major",
+          "label": "這項決策將決定NAVI在Major之路上的成敗。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "potential",
+          "label": "flamie的離開令人惋惜，但b1t的潛力值得期待。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "rmr",
+          "label": "RMR新制正在迫使各隊做出艱難的陣容抉擇。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "hard",
+          "label": "這是艱難的決定，但我們相信這對隊伍的長遠發展是正確的。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "thanks",
+          "label": "感謝flamie多年來的貢獻，期待他調整後的回歸。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "support",
+          "label": "我們別無選擇，只能全力支持b1t的成長。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "flamie",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "set_squad",
+          "playerId": "b1t",
+          "squadStatus": "starter",
+          "clubId": ""
+        }
+      ]
+    },
+    {
+      "id": "hist_xyp9x_benched_astralis_2021_04_13",
+      "title": "Xyp9x被Bubzkji換上首發",
+      "tier": 5,
+      "isMajor": false,
+      "fireHour": 2448,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "astralis_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -1
+        },
+        {
+          "type": "add_estate",
+          "key": "veterans",
+          "value": -1
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -1
+        }
+      ],
+      "description": "Astralis將Bubzkji調入先發陣容，取代Xyp9x的位置。Xyp9x自2020年中因職業倦怠申請休假後，狀態一直未能完全恢復。Bubzkji在此前的輪換中已累積了一定的上場經驗，此次調整被視為Astralis七人輪換制的一部分。",
+      "firstPersonDescription": "我們在陣容上做出調整，由Bubzkji取代Xyp9x進入先發陣容。Xyp9x自2020年中因職業倦怠申請休假後，狀態一直未能完全恢復。Bubzkji在此前的輪換中已累積了一定的上場經驗，我們相信他能為隊伍帶來新的活力。這項調整也與我們七人輪換制的長期規劃相符。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "routine",
+          "label": "這或許只是輪換制度下的例行調整。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "warning",
+          "label": "Xyp9x的狀態令人擔憂，這對Astralis是一個警訊。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "normal",
+          "label": "這是我們輪換制度的正常運作。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "prove",
+          "label": "希望Bubzkji能抓住這次機會證明自己。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "Xyp9x",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "join_club",
+          "playerId": "Bubzkji",
+          "clubId": "astralis_2021",
+          "squadStatus": "starter"
+        }
+      ]
+    },
+    {
+      "id": "hist_astralis_internal_fracture_2021_04_26",
+      "title": "Astralis內部矛盾浮現",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 2760,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "astralis_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -20
+        },
+        {
+          "type": "add_roster_pressure",
+          "value": 10
+        },
+        {
+          "type": "add_board",
+          "value": -4
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -5
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -4
+        },
+        {
+          "type": "set_flag",
+          "key": "dynasty_internal_fracture",
+          "durationDays": 0
+        }
+      ],
+      "description": "Astralis內部的矛盾逐漸浮上檯面。自2020年初以來，管理層與選手之間在休假、薪資與訓練安排等問題上產生了嚴重分歧。體育總監Kasper Hvidt的管理風格被認為過於刻板，選手們希望獲得更多休假時間以緩解職業倦怠，但管理層以賽程與投資者利益為由拒絕了這些請求。疫情期間俱樂部更要求全體員工減薪百分之三十，進一步加劇了雙方的緊張關係。CSPPA已介入協調，但裂痕似乎難以修補。",
+      "firstPersonDescription": "我們必須承認，隊伍內部正面臨著嚴峻的考驗。自2020年初以來，管理層與選手之間在休假、薪資與訓練安排等問題上產生了嚴重分歧。競技總監Kasper Hvidt的管理風格被認為過於刻板，選手們希望獲得更多休假時間以緩解職業倦怠，但管理層以賽程與投資者利益為由拒絕了這些請求。疫情期間俱樂部要求全體員工減薪百分之三十，進一步加劇了雙方的緊張關係。CSPPA已介入協調。gla1ve在2020年5月因職業倦怠與健康問題申請休假三個月，Xyp9x隨後也跟進。這些裂痕正在侵蝕我們的核心。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "collapse",
+          "label": "王朝的崩潰往往從內部開始。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "erode",
+          "label": "管理層與選手的矛盾正在侵蝕這支隊伍的根基。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "turning",
+          "label": "這或許是Astralis走向衰落的轉折點。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "face",
+          "label": "我們必須正視這些問題，否則王朝將從內部崩塌。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "talk",
+          "label": "管理層與選手需要坐下來好好溝通。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_heroic_epl_s13_2021_04_30",
+      "title": "Heroic奪得EPL S13冠軍，cadiaN打出載入史冊的1v4殘局",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 2856,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "heroic_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 7
+        },
+        {
+          "type": "add_fame",
+          "value": 5
+        },
+        {
+          "type": "add_fans",
+          "value": 7000
+        },
+        {
+          "type": "add_board",
+          "value": 5
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": 6
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": 4
+        }
+      ],
+      "description": "Heroic在EPL第十三賽季總決賽中以三比零擊敗Gambit，以不敗戰績奪得冠軍。這是丹麥隊伍繼Astralis之後再次登上世界之巔。決賽中，cadiaN在關鍵回合打出了一記載入史冊的1v4殘局，以一己之力逆轉劣勢，徹底摧毀了對手的士氣。這支丹麥黑馬在整個賽事中展現了驚人的團隊紀律與戰術執行力，證明了他們並非曇花一現。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "congrats",
+          "label": "恭喜他們，這是一場值得銘記的勝利。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "clutch",
+          "label": "cadiaN的殘局將永遠留在CSGO的歷史中。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "denmark",
+          "label": "丹麥CS正在迎來新的統治者。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": []
+    },
+    {
+      "id": "hist_akuma_cis_rmr_cheat_allegations_2021_05_20",
+      "title": "Akuma戰隊於獨聯體RMR接連擊敗NaVi與VP，遭作弊指控",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 3336,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "",
+      "onFireEffects": [],
+      "description": "Akuma戰隊在EPIC League CIS RMR賽事中接連擊敗NaVi與Virtus.pro，引發業界重大爭議。這支隊伍在賽前的表現與頂級隊伍相去甚遠，卻在本次賽事中展現出遠超以往的實力，多次以壓倒性方式擊敗一線隊伍。比賽過程中多個可疑鏡頭被社群放大檢視，作弊指控迅速蔓延，多位職業選手公開表達質疑。賽事方介入調查但未能取得決定性證據，最終以Akuma獲得RMR積分作結。此事重創了賽事公信力，也讓獨聯體CS的賽事公正性受到前所未有的挑戰。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "abnormal",
+          "label": "他們的表現與過往判若兩人，這絕非正常現象。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "stain",
+          "label": "缺乏證據並不代表清白，這件事將永遠成為獨聯體CS的一個汙點。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "disappointed",
+          "label": "賽事方的處理方式令人失望。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": []
+    },
+    {
+      "id": "hist_coldzera_benched_faze_2021_06_01",
+      "title": "coldzera離開FaZe",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 3624,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "faze_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -4
+        },
+        {
+          "type": "add_fame",
+          "value": -2
+        },
+        {
+          "type": "add_board",
+          "value": -3
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -3
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -4
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "coldzera",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "set_squad",
+          "playerId": "olofmeister",
+          "squadStatus": "starter",
+          "clubId": ""
+        }
+      ],
+      "description": "coldzera被FaZe下放至替補席，這位兩屆年度最佳選手與兩屆Major冠軍得主在歐洲的旅程就此告一段落。coldzera在推特上表示此舉是基於隊伍近期成績不佳，以及他與FaZe的合約即將到期。他自2019年9月從MIBR加入FaZe以來，為隊伍贏得BLAST Pro Series哥本哈根站冠軍，但隨著NiKo離隊與陣容多次重組，隊伍始終未能重現往日榮光。FaZe的世界排名在六月初已跌至歷史新低的第二十五位，未來先發陣容的空缺將由olofmeister回歸填補。",
+      "firstPersonDescription": "coldzera已正式被移至替補席，他在推特上表示這項決定是基於隊伍近期的成績不佳，以及他與FaZe的合約即將到期。coldzera自2019年9月從MIBR加入以來，為我們贏得了BLAST Pro Series哥本哈根站的冠軍，並在2020年多次打入賽事四強。然而隨著NiKo離隊、陣容重組，隊伍始終未能找回過去的競爭力。coldzera表示將開始評估新的職業機會，我們感謝他這段時間的付出，並祝福他未來一切順利。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "fail",
+          "label": "巴西明星的歐洲冒險以失敗告終。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "sigh",
+          "label": "這筆轉會當初被寄予厚望，如今卻令人唏噓。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "next",
+          "label": "他的下一步將備受關注。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝coldzera的貢獻，祝福他找到新的歸宿。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "best",
+          "label": "這對雙方都是最好的選擇。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_nbk_leaves_cs_for_valorant_2021_06_29",
+      "title": "NBK-宣布轉戰Valorant，結束CS生涯",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 4296,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "og_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -5
+        },
+        {
+          "type": "add_fame",
+          "value": -3
+        },
+        {
+          "type": "add_board",
+          "value": -4
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -3
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -5
+        },
+        {
+          "type": "add_estate",
+          "key": "veterans",
+          "value": -4
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "release",
+          "playerId": "nbk",
+          "squadStatus": "bench",
+          "clubId": ""
+        }
+      ],
+      "description": "NBK-正式告別CS:GO，轉戰Valorant。這位兩屆Major冠軍得主在推特發布的影片中表示，自己已經經歷了一切，從地方賽事到贏得Major，將生命奉獻給了CS，但回憶終究屬於過去，是時候做出改變了。他強調這項決定並非出於金錢考量，而是基於個人職涯發展的考量。NBK-在CS:GO職業生涯中共奪得五十二座賽事冠軍，三次入選HLTV年度TOP20，並在2019年底與Aleksib共同組建了OG。法國CS的另一面旗幟就此降下。",
+      "firstPersonDescription": "NBK-正式宣布離開CS:GO並轉戰Valorant。他在推特發布了一段名為「新的開始」的影片，表示經過數週的深思熟慮後做出了這項決定，並強調這並非出於金錢考量。NBK-自2019年12月OG成立之初便是我們陣容的核心成員，帶領隊伍在IEM紐約2020歐洲區與Flashpoint第二季中拿下亞軍。我們感謝他為這支年輕隊伍所做的一切，並祝福他在新的戰場上繼續發光發熱。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "france",
+          "label": "法國CS傳奇的離去，將進一步削弱法國選手的競爭力。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "wave",
+          "label": "這股轉瓦浪潮恐怕還會持續。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "watch",
+          "label": "他在Valorant的表現值得關注。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝NBK-為OG奠定的基礎，祝福他在Valorant取得成功。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "respect",
+          "label": "一代傳奇的離去令人惋惜，但我們尊重他的選擇。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_kjaerbye_retires_2021_06_30",
+      "title": "Kjaerbye宣布退役",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 4320,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "faze_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -3
+        },
+        {
+          "type": "add_fame",
+          "value": -2
+        },
+        {
+          "type": "add_board",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -3
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "release",
+          "playerId": "kjaerbye",
+          "squadStatus": "bench",
+          "clubId": ""
+        }
+      ],
+      "description": "Kjaerbye正式宣布退役，結束了他長達十年的CS職業生涯。這位二十三歲的丹麥步槍手在推特上表示，他已不再擁有在頂級賽場競爭所需的渴望與決心。Kjaerbye最輝煌的時刻莫過於2017年以十八歲之齡率領Astralis奪得ELEAGUE亞特蘭大Major冠軍，並獲頒賽事MVP，當時他成為Major史上最年輕的MVP得主。然而離開Astralis加入North後，他的職業生涯開始走下坡，2020年轉會FaZe亦未能重現昔日風采。他曾兩度入選HLTV年度TOP20，如今卻以二十三歲的年紀告別了這項他曾經統治的運動。",
+      "firstPersonDescription": "Kjaerbye正式宣布退役，結束了他長達十年的CS職業生涯。他在推特發布的聲明中表示，他已不再擁有在頂級賽場競爭所需的渴望與決心。Kjaerbye在2020年8月加入我們，期間為隊伍贏得IEM紐約2020歐洲區冠軍，然而他的表現始終未能回到2017年的巔峰水準。我們感謝他在FaZe期間的付出，並祝福他在人生的下一篇章中一切順利。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "mvp",
+          "label": "亞特蘭大Major的MVP，竟以這樣的方式告別賽場。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "decline",
+          "label": "自從離開Astralis後，他的職業生涯就再也沒有回到正軌。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "young",
+          "label": "二十三歲退役，這無疑是CSGO史上最令人惋惜的結局之一。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝Kjaerbye的付出，他的成就不會被遺忘。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "sigh",
+          "label": "二十三歲就告別賽場，令人不勝唏噓。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_big_lists_xantares_2021_08_01",
+      "title": "BIG掛牌XANTARES",
+      "tier": 5,
+      "isMajor": false,
+      "fireHour": 5088,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "big_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -1
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -1
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "request_transfer",
+          "playerId": "xantares",
+          "squadStatus": "bench",
+          "clubId": ""
+        }
+      ],
+      "description": "BIG正式將XANTARES掛牌，這位土耳其選手將結束在德國的兩年生涯。XANTARES自2019年從Space Soldiers加入BIG以來，幫助隊伍贏得DreamHack萊比錫公開賽冠軍，並在2020年ESL One科隆歐洲區獲得亞軍。據傳BIG已開始尋找替代人選，而XANTARES預計將返回土耳其加入Eternal Fire。",
+      "firstPersonDescription": "我們正式將XANTARES列入轉會名單，這位土耳其選手將結束在BIG為期兩年的生涯。XANTARES自2019年從Space Soldiers加入以來，為我們贏得了DreamHack萊比錫公開賽冠軍，並在2020年打入ESL One科隆歐洲區決賽。管理層與選手本人共同做出了這項決定，我們感謝他為隊伍做出的貢獻。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "europe_end",
+          "label": "他在歐洲的旅程就此告一段落。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "home",
+          "label": "他將回到土耳其，或許那才是屬於他的舞台。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝XANTARES的付出，祝福他未來一切順利。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "fair",
+          "label": "這對雙方都是合理的選擇。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_fnatic_rebuild_alex_mezii_2021_08_07",
+      "title": "fnatic正式啟動重建，下放Golden與JW，簽下ALEX與mezii轉為國際陣容",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 5232,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "fnatic_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -3
+        },
+        {
+          "type": "add_fame",
+          "value": -2
+        },
+        {
+          "type": "add_board",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "veterans",
+          "value": -5
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -3
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -3
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "golden",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "set_squad",
+          "playerId": "jw",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "join_club",
+          "playerId": "alex",
+          "clubId": "fnatic_2021",
+          "squadStatus": "starter"
+        },
+        {
+          "type": "join_club",
+          "playerId": "mezii",
+          "clubId": "fnatic_2021",
+          "squadStatus": "starter"
+        }
+      ],
+      "description": "fnatic正式啟動重建，將指揮Golden與傳奇選手JW下放至替補席，同時簽下英國選手mezii與法國指揮ALEX。這標誌著這支瑞典CS的圖騰隊伍正式放棄純瑞典陣容，轉向國際化路線。JW自2013年加入fnatic以來，為隊伍贏得三座Major冠軍，是CSGO歷史上最偉大的狙擊手之一。ALEX在Cloud9解散後成為自由選手，mezii則從Endpoint轉會而來。",
+      "firstPersonDescription": "我們正式啟動CSGO部門的重建計畫，將Golden與JW下放至替補席，同時簽下ALEX與mezii加入先發陣容。這項決定標誌著fnatic將放棄純瑞典陣容，轉向國際化路線。Golden自2020年回歸以來擔任指揮，而JW則是fnatic自2013年以來的標誌性人物，三屆Major冠軍得主。管理層感謝兩位選手多年來的貢獻，但相信新的方向能為隊伍帶來新的活力。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "sweden",
+          "label": "瑞典CS的象徵正在消逝。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "era",
+          "label": "JW的離開標誌著一個時代的結束。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "watch",
+          "label": "國際陣容能否為fnatic帶來新生，仍有待觀察。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝Golden與JW為fnatic所做的一切，但我們必須向前看。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "trend",
+          "label": "國際陣容是未來的趨勢，我們必須跟上時代。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_astralis_lucky_starts_xyp9x_bench_2021_08_18",
+      "title": "Astralis將Xyp9x列為替補，啟用Lucky作為首發狙擊手",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 5496,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "astralis_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -2
+        },
+        {
+          "type": "add_board",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "veterans",
+          "value": -3
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -2
+        },
+        {
+          "type": "add_roster_pressure",
+          "value": 3
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "set_squad",
+          "playerId": "Xyp9x",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "join_club",
+          "playerId": "lucky",
+          "clubId": "astralis_2021",
+          "squadStatus": "starter"
+        }
+      ],
+      "description": "Astralis在EPL S14的賽事名單中將Xyp9x列為替補，同時啟用十八歲的年輕狙擊手Lucky作為先發。這是device離隊後，Astralis首次啟用專職狙擊手參加正式賽事。此前狙擊手職責由dupreeh與gla1ve分擔。gla1ve曾明確表示沒有專職狙擊手，重返巔峰將是癡人說夢。Lucky於七月底從Tricked簽約加入Astralis作為第六人，他將在EPL S14首戰對陣Team Spirit的比賽中首次亮相。Xyp9x在接受採訪時表示自己正在評估未來方向，不排除離開Astralis加入其他隊伍的可能性。目前陣容中僅gla1ve已續約至2024年，dupreeh、Magisk與Xyp9x的合約都將在年底到期。",
+      "firstPersonDescription": "我們在向ESL官方提交的EPL S14賽事名單中，將Xyp9x列為替補，並啟用年輕狙擊手Lucky作為先發。Xyp9x自2020年中因職業倦怠申請休假後，狀態一直未能完全恢復。同時，在device離隊後，我們缺乏專職狙擊手的問題日益嚴重，gla1ve曾明確表示沒有專職狙擊手，重返巔峰將是癡人說夢。我們於七月底從Tricked簽下Lucky作為第六人，他將在本屆賽事中承擔狙擊手職責。Xyp9x在接受採訪時表示，他正在評估未來方向，也不排除離開Astralis加入其他隊伍的可能性。gla1ve已與俱樂部續約三年，而dupreeh、Magisk與Xyp9x的合約將在年底到期。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "clutch_era",
+          "label": "殘局大師的時代或許已經結束。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "collapse",
+          "label": "這是Astralis王朝全面解體的信號。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "gap",
+          "label": "Lucky能否扛起device留下的空缺，仍是未知數。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "needed",
+          "label": "這是為了隊伍競爭力所做的必要調整。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "respect",
+          "label": "感謝Xyp9x多年來的付出，我們尊重他的選擇。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_astralis_xyp9x_subs_glaive_2021_09_07",
+      "title": "Xyp9x替補gla1ve出戰BLAST Premier Fall Groups",
+      "tier": 5,
+      "isMajor": false,
+      "fireHour": 5976,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "astralis_2021",
+      "onFireEffects": [
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": 1
+        }
+      ],
+      "description": "Astralis指揮gla1ve因將迎來第一個孩子的出生，將缺席BLAST Premier Fall Groups賽事。Xyp9x將暫時回歸先發陣容填補空缺，gla1ve本人已在推特上證實這項安排。體育總監Kasper Hvidt表示，即使電競界缺乏這樣的傳統，但給予選手陪伴家人的時間至關重要。Xyp9x目前已與隊伍一同訓練，而gla1ve將以助理教練的身分輔佐zonic。",
+      "firstPersonDescription": "gla1ve因將迎來第一個孩子的出生，將暫時離開隊伍參加BLAST Premier Fall Groups賽事。Xyp9x將在此期間回歸先發陣容填補空缺，gla1ve本人也證實了這項安排。體育總監Kasper Hvidt表示，即使電競界缺乏這樣的傳統，但我們堅信在精英環境中取得生活與工作的平衡至關重要。Xyp9x目前已與隊伍一同訓練，而gla1ve將以助理教練的身分輔佐zonic。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "timely",
+          "label": "殘局大師暫時回歸，這對Astralis而言是及時的補強。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "respect",
+          "label": "gla1ve的父親身分值得尊重，這是一次合理的請假。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "rotation",
+          "label": "這是輪換制度的正常運作，祝福gla1ve成為父親。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "direct",
+          "label": "Xyp9x的回歸對我們而言是最直接的選擇。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_navi_grand_slam_2021_09_13",
+      "title": "NAVI拿下大滿貫，成為歷史上第三支達成的隊伍",
+      "tier": 2,
+      "isMajor": true,
+      "fireHour": 6120,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "navi_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 30
+        },
+        {
+          "type": "add_roster_fame",
+          "value": 30
+        },
+        {
+          "type": "add_fame",
+          "value": 12
+        },
+        {
+          "type": "add_fans",
+          "value": 40000
+        },
+        {
+          "type": "add_board",
+          "value": 10
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": 12
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": 10
+        }
+      ],
+      "description": "NAVI在贏得EPL S14冠軍後，正式完成英特爾大滿貫，成為繼Astralis與Team Liquid之後第三支達成此成就的隊伍。他們在十站賽事週期中奪下四座冠軍，包括2020年IEM卡托維茲、2020年ESL One科隆歐洲區、2021年IEM卡托維茲以及EPL S14。這支獨聯體勁旅在b1t正式取代flamie後，陣容達到前所未有的穩定與默契。s1mple的個人統治力與B1ad3的戰術體系共同鑄造了這座里程碑，NAVI的時代已然降臨。",
+      "firstPersonDescription": "我們在贏得EPL S14冠軍後，正式完成了英特爾大滿貫的壯舉，成為繼Astralis與Team Liquid之後，歷史上第三支達成此成就的隊伍。從2020年IEM卡托維茲到2021年EPL S14，我們在十站賽事中拿下了四座冠軍。這支隊伍歷經多次調整與磨合，終於攀上了這座象徵統治力的高峰。s1mple與electronic的雙核心組合，加上b1t的崛起與教練B1ad3的戰術體系，共同鑄造了這個屬於我們的黑金王朝。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "dynasty",
+          "label": "黑金王朝正式崛起，這支隊伍正在書寫歷史。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "dominance",
+          "label": "恭喜NAVI，他們展現了真正的統治力。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "major",
+          "label": "接下來的斯德哥爾摩Major，他們將是最大的奪冠熱門。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "glory",
+          "label": "我們做到了，這是屬於黑金王朝的榮耀時刻。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "deserved",
+          "label": "感謝每一位選手與工作人員的努力，這座大滿貫是我們應得的。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_pgl_major_stockholm_offline_2021_09_16",
+      "title": "PGL Major Stockholm宣布線下回歸",
+      "tier": 2,
+      "isMajor": true,
+      "fireHour": 6192,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "",
+      "onFireEffects": [],
+      "description": "PGL正式宣布，斯德哥爾摩Major將如期以線下賽形式舉辦，這是自2020年初新冠疫情爆發以來，CSGO首次迎來線下Major賽事。瑞典政府於上週二宣布進一步放寬防疫限制，從九月下旬起允許室內活動滿載運作，為Major的舉辦掃除了最後的障礙。賽事將於10月26日至11月7日在Avicii Arena舉行，淘汰賽階段目標為滿場觀眾，該場館可容納約一萬四千人。獎金池提升至兩百萬美元，創下CSGO Major歷史新高。各賽區名額分配如下：歐洲十一席、北美五席、獨聯體五席、亞洲一席、大洋洲一席、南美洲一席，最終名單將由IEM Fall賽事結束後確定。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "return",
+          "label": "兩年等待終於結束，線下Major的回歸對整個生態意義重大。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "crowd",
+          "label": "滿場觀眾的Major才是真正的Major，這將是一場盛大的回歸。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "rmr",
+          "label": "各隊的RMR積分將在此刻迎來最終的考驗。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": []
+    },
+    {
+      "id": "hist_dust2_mid_doors_wall_2021_09_21",
+      "title": "Dust II中門新增牆壁，中門對狙走入歷史",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 6312,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "",
+      "firstPersonRosterRole": "Awper",
+      "firstPersonRosterMapId": "Dust II",
+      "firstPersonRosterAboveGrade": "A",
+      "onFireEffects": [
+        {
+          "type": "add_role_map_proficiency",
+          "key": "Awper:Dust II",
+          "value": -25
+        }
+      ],
+      "description": "Valve對Dust II進行了一次震撼性的改動，中門處新增了一道牆壁，徹底終結了這張地圖最經典的中門對狙玩法。自CS 1.6以來，中門對狙一直是Dust II的標誌性元素，無數傳奇狙擊手在此留下了永恆的畫面。如今這道牆壁將使T方出生點無法直接看見CT中路的動向，CT也無法再透過中門第一時間觀察T方的配槍配置。這項改動將影響所有層級的玩家與職業隊伍，狙擊手在Dust II上的影響力將被永久削弱，各隊必須重新制定中路控制策略與開局戰術。",
+      "firstPersonDescription": "Valve對Dust II進行了一次震撼性的改動，中門處新增了一道牆壁，徹底終結了這張地圖最經典的遊戲元素。自CS 1.6以來，中門對狙一直是Dust II的標誌性象徵，無數傳奇狙擊手在此留下了永恆的畫面。如今這道牆壁將使T方出生點無法直接看見CT中路的動向，CT也無法再透過中門第一時間觀察T方的配槍配置。這項改動將永久改變所有隊伍在Dust II上的戰術布置，狙擊手在這張地圖上的影響力將被大幅削弱。我們必須重新制定中路的控制策略與開局戰術。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "advantage",
+          "label": "這對我們而言反而是好事，對手的狙擊手將失去原有的優勢。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "unaffected",
+          "label": "我們本就不擅長這張地圖，這項改動對我們沒有影響。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "adapt",
+          "label": "我們接受這項改動，並將重新調整Dust II的戰術體系。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "duty",
+          "label": "經典元素的消失令人惋惜，但適應新版本是職業隊伍的職責。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "trial",
+          "label": "這對我們的狙擊手而言是一次嚴峻的考驗。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_navi_stockholm_major_champion_2021_10_30",
+      "title": "NAVI贏得PGL Major斯德哥爾摩",
+      "tier": 2,
+      "isMajor": true,
+      "fireHour": 7248,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "navi_2021",
+      "tokenCompetitionId": "pgl_major_stockholm_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 30
+        },
+        {
+          "type": "add_roster_fame",
+          "value": 30
+        },
+        {
+          "type": "add_board",
+          "value": 8
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": 10
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": 6
+        },
+        {
+          "type": "add_estate",
+          "key": "management",
+          "value": 4
+        }
+      ],
+      "description": "NAVI在PGL Major斯德哥爾摩總決賽中以二比零擊敗{決賽對手}，奪得隊史首座Major冠軍。這不僅是一場勝利，更是一項前無古人的成就，NAVI成為CSGO歷史上唯一一支以全局皆為二比零的完美戰績奪冠的隊伍。從傳奇組階段開始，他們先後擊敗各個強隊，七場比賽未失一圖。s1mple以1.47的rating獲評賽事MVP，這是Major歷史上最高的個人評分紀錄。歷經五年多的職業生涯與無數次的遺憾，s1mple終於捧起了那座象徵至高榮耀的Major獎盃，黑金王朝在瑞典的漫天歡呼中達到了巔峰。",
+      "firstPersonDescription": "我們做到了。在Avicii Arena的滿場觀眾面前，我們以二比零擊敗對手，贏得了PGL Major斯德哥爾摩的冠軍。這不僅是我們隊史第一座Major冠軍，更是CSGO歷史上唯一一次以全局皆為二比零的完美戰績奪冠的紀錄。從入圍賽到總決賽，我們未失一圖。s1mple在長達五年多的職業生涯後終於捧起了那座屬於他的Major獎盃，他以高達1.47的rating獲評賽事MVP，這是Major歷史上最高的個人評分紀錄。黑金王朝在這一刻達到了巔峰。",
+      "triggers": [
+        {
+          "type": "competition_champion",
+          "key": "pgl_major_stockholm_2021:navi_2021"
+        }
+      ],
+      "options": [
+        {
+          "id": "moved",
+          "label": "s1mple終於圓夢，這是CSGO歷史上最令人動容的時刻之一。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "remembered",
+          "label": "完美奪冠，這支NAVI將永遠被銘記。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "peak",
+          "label": "黑金王朝的統治力在這一刻達到了頂點。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "perfect",
+          "label": "我們是冠軍，這是屬於黑金王朝的完美賽季。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "s1mple",
+          "label": "s1mple終於圓夢，這座Major獎盃是對他職業生涯最好的肯定。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "history",
+          "label": "這支隊伍將永遠被載入CS的史冊。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_gambit_stockholm_major_champion_2021_10_30",
+      "title": "Gambit贏得PGL Major斯德哥爾摩",
+      "tier": 2,
+      "isMajor": true,
+      "fireHour": 7248,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "gambit_2021",
+      "tokenCompetitionId": "pgl_major_stockholm_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 30
+        },
+        {
+          "type": "add_roster_fame",
+          "value": 30
+        },
+        {
+          "type": "add_board",
+          "value": 8
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": 10
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": 6
+        },
+        {
+          "type": "add_estate",
+          "key": "reserves",
+          "value": 4
+        }
+      ],
+      "description": "Gambit在PGL Major斯德哥爾摩總決賽中奪得隊史首座Major冠軍。這支獨聯體黑馬在賽前世界排名僅第十九位，卻在一年之內完成了從默默無聞到世界之巔的驚人躍升。他們的每一場成績都向世界證明了他們並非曇花一現。在Avicii Arena的舞台上，他們面對剛拿下大滿貫、氣勢如虹的NAVI，也展現出了超乎年齡的冷靜與團隊紀律。sh1ro以穩定的狙擊火力壓制了對面，Ax1Le與Hobbit在關鍵回合的發揮更徹底摧毀了對手的防線。這支被視為CS史上最強青訓隊的年輕陣容，在眾人驚嘆聲中登上了CS的頂峰，證明了獨聯體的CS人才儲備遠超所有人的想像。",
+      "firstPersonDescription": "我們做到了。在Avicii Arena的滿場觀眾面前，我們擊敗了{決賽對手}，贏得了PGL Major斯德哥爾摩的冠軍。從一年前世界排名第十九位、從入圍賽一路打進IEM卡托維茲決賽並奪冠，到如今在Major舞台上擊敗剛拿下大滿貫的NAVI，這支由青訓體系培養出來的年輕隊伍用兩年的時間完成了所有選手一輩子的夢想。sh1ro在總決賽中以穩定的狙擊火力壓制了對面，Ax1Le與Hobbit在關鍵回合的發揮更徹底摧毀了對手的防線。獨聯體雙雄的時代正式來臨，而我們站在了頂峰。從Groove教練打造的青訓體系到如今的世界冠軍，這一刻屬於所有相信我們的人。",
+      "triggers": [
+        {
+          "type": "competition_champion",
+          "key": "pgl_major_stockholm_2021:gambit_2021"
+        }
+      ],
+      "options": [
+        {
+          "id": "era",
+          "label": "獨聯體雙雄的時代正式來臨，這支青訓隊的成長令人難以置信。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "generation",
+          "label": "sh1ro與Ax1Le在Major舞台上的表現，標誌著新一代獨聯體天才的誕生。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "academy",
+          "label": "我們是冠軍，這座Major獎盃是對我們青訓體系最好的證明。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "era",
+          "label": "獨聯體已如閃電般歸來，而我們就是這個時代的開創者。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "script",
+          "label": "擊敗剛拿下大滿貫的NAVI並且圓夢Major，沒有比這更完美的劇本了。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_complexity_jks_es3tag_transfer_list_2021_11_03",
+      "title": "Complexity宣布jks、es3tag進入交易名單，陣容解體",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 7344,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "complexity_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -5
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "join_club",
+          "playerId": "es3tag",
+          "clubId": "complexity_2021",
+          "squadStatus": "starter"
+        },
+        {
+          "type": "request_transfer",
+          "playerId": "es3tag",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "request_transfer",
+          "playerId": "jks",
+          "squadStatus": "bench",
+          "clubId": ""
+        }
+      ],
+      "description": "Complexity正式將jks與es3tag列入轉會名單，這支曾被稱為巨像的歐洲混編陣容正式宣告解體。blameF與poizon已於此前進入自由市場，k0nfig因手腕受傷離隊，coldzera的短期合約也將在年底到期。隊伍在IEM Fall歐洲區僅獲得第十七至二十名，未能取得Major參賽資格，這成為壓垮駱駝的最後一根稻草。教練peacemaker表示隊伍內部在IEM Fall期間發生了不和諧的事件，裂痕已無法修補。Complexity表示將繼續留在CS領域，並在合適的時間重新組建隊伍。",
+      "firstPersonDescription": "我們正式將jks與es3tag列入轉會名單，這標誌著我們過去兩年圍繞歐洲陣容打造計畫的徹底終結。此前blameF、poizon與k0nfig已相繼離隊，coldzera的短期合約也將在年底到期。未能打入PGL斯德哥爾摩Major是壓垮這項計畫的最後一根稻草，我們在IEM Fall歐洲區以第十七至二十名作收，這項結果直接導致管理層決定重建隊伍。隊伍內部在IEM Fall期間發生了不和諧的事件，選手間的裂痕已無法修補。我們將繼續留在CS領域，並在合適的時間重新組建隊伍。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "collapse",
+          "label": "未能打入Major的代價，一支強隊就此崩塌。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "fail",
+          "label": "他們的歐洲實驗最終以失敗告終。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "market",
+          "label": "這些選手流入市場，或許我們可以從中獲益。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝這幾位選手為隊伍所做的一切，我們必須向前看。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "pain",
+          "label": "這是一次痛苦的決定，但為了未來的發展，我們別無選擇。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_astralis_blamef_k0nfig_2021_11_04",
+      "title": "Astralis簽下blameF與k0nfig，宣告王朝陣容徹底解體",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 7368,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "astralis_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -5
+        },
+        {
+          "type": "clear_flag",
+          "key": "dynasty_internal_fracture",
+          "durationDays": 0
+        },
+        {
+          "type": "add_board",
+          "value": -4
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -3
+        },
+        {
+          "type": "add_estate",
+          "key": "veterans",
+          "value": -5
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "management",
+          "value": 2
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "join_club",
+          "playerId": "blamef",
+          "clubId": "astralis_2021",
+          "squadStatus": "starter"
+        },
+        {
+          "type": "join_club",
+          "playerId": "k0nfig",
+          "clubId": "astralis_2021",
+          "squadStatus": "starter"
+        }
+      ],
+      "description": "Astralis正式簽下blameF與k0nfig，同時前North教練ave接替zonic成為新任主教練。這項人事調整意味著dupreeh、Magisk與zonic將在明年一月合約到期後離開俱樂部，CSGO歷史上最成功的長期陣容核心就此不復存在。Astralis在PGL斯德哥爾摩Major小組賽中以一勝三負的成績爆冷出局，這是隊伍成立以來首次無緣Major淘汰賽。競技總監Kasper Hvidt表示，這是一支全新的Astralis，過去的一切已成歷史。blameF表示與gla1ve合作讓他能夠放下指揮重擔，更專注於個人操作。k0nfig則表示，在Complexity的兩年讓他更加懷念純丹麥隊伍的氣氛。",
+      "firstPersonDescription": "我們正式宣布簽下前Complexity的blameF與k0nfig，同時前North教練ave將接任zonic成為新任主教練。這項人事調整意味著dupreeh、Magisk與zonic將在明年一月合約到期後離開俱樂部。我們感謝這三位傳奇人物為俱樂部贏得的四座Major冠軍與無數榮耀，當後人記錄我們的故事時，他們將永遠位於第一頁。我們在PGL斯德哥爾摩Major中以令人失望的一比三成績小組出局，這是隊伍成立以來首次無緣淘汰賽。競技總監Kasper Hvidt表示，過去的一切已不願再提及，這是一支全新的Astralis，未來掌握在我們自己手中。blameF將與gla1ve共同承擔指揮責任，這讓他能更專注於個人表現。k0nfig則表示，在Complexity待了兩年之後，他懷念純丹麥隊伍中那種獨特的氛圍與感覺。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "remnants",
+          "label": "丹麥傳奇五人組只剩gla1ve與Xyp9x還留在隊中。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "history",
+          "label": "A隊全丹麥王朝陣容正式走入歷史。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "rebuild",
+          "label": "這或許是Astralis從巔峰走向重建的關鍵轉折點。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝傳奇三人組的所有貢獻，但我們必須迎接新的時代。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "new",
+          "label": "這是一支全新的Astralis，我們將帶著過去的榮耀繼續前進。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "chapter",
+          "label": "王朝的終結令人惋惜，但新的篇章已經展開。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_eg_roster_overhaul_2021_11_08",
+      "title": "EG北美陣容大換血",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 7464,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "eg_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": -3
+        },
+        {
+          "type": "add_board",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": -3
+        },
+        {
+          "type": "add_estate",
+          "key": "management",
+          "value": 1
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "release",
+          "playerId": "stanislaw",
+          "squadStatus": "bench",
+          "clubId": ""
+        }
+      ],
+      "description": "Evil Geniuses在PGL斯德哥爾摩Major以零勝三敗的成績在小組賽階段墊底出局後，宣布對陣容進行大幅度調整。stanislaw、oBo與MICHU已率先離開隊伍，目前陣容中僅剩Brezhe與CeRq兩名選手。自從Ethan於今年一月轉戰Valorant後，EG的陣容就一直處於不穩定狀態，簽入MICHU與將daps轉為教練等調整均未能改善成績。他們晉級Major之路亦備受質疑，僅靠擊敗00Nation與Trumiph棄權等情況才勉強取得傳奇組名額。EG表示將組建更強大的陣容，預計將圍繞現有核心進行重建。",
+      "firstPersonDescription": "",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "quake",
+          "label": "北美CS的地震還在持續。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "inevitable",
+          "label": "他們在Major的表現令人失望，這次換血是必然的結果。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "region",
+          "label": "北美賽區的競爭力正在受到嚴峻考驗。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": []
+    },
+    {
+      "id": "hist_navi_blast_world_final_2021_12_20",
+      "title": "NaVi奪得BLAST全球總決賽冠軍，s1mple單年8座MVP創歷史紀錄",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 8472,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "navi_2021",
+      "onFireEffects": [
+        {
+          "type": "add_exposure",
+          "value": 3
+        },
+        {
+          "type": "add_board",
+          "value": 4
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": 5
+        },
+        {
+          "type": "add_estate",
+          "key": "star_players",
+          "value": 4
+        }
+      ],
+      "description": "NAVI在BLAST全球總決賽中以二比一擊敗Gambit，奪得2021年第八座冠軍獎盃。NAVI在首戰輸給Liquid後跌入敗者組，隨後連續擊敗Heroic、G2、Liquid、Vitality與Gambit完成了一穿五的壯舉。s1mple以全賽事平均1.42的rating獲評MVP，這是他今年的第八座MVP獎牌，打破了device在2018年創下的單年七座MVP紀錄。這是NAVI連續第四座線下大賽冠軍，黑金王朝以無可爭議的統治力為2021年畫下了完美句點。",
+      "firstPersonDescription": "我們在BLAST全球總決賽中以二比一擊敗Gambit，為2021年畫下了完美的句點。這是我們今年拿下的第八座冠軍，同時也是連續第四座線下大賽冠軍。總決賽開局雖在Mirage以十一比十六先失一圖，但隨後在Ancient與Inferno上我們以摧枯拉朽之勢接管了比賽。從敗者組第一輪開始，我們接連擊敗了Heroic、G2、Liquid、Vitality與Gambit，完成了不可思議的一穿五。s1mple以平均1.42的rating獲評賽事MVP，這是他今年的第八座MVP獎牌，打破了device在2018年創下的單年七座MVP紀錄。s1mple在賽後受訪時表示，如今他會說NAVI王朝已經到來。",
+      "triggers": [
+        {
+          "type": "competition_champion",
+          "key": "blast_premier_world_final_2021:navi_2021"
+        }
+      ],
+      "options": [
+        {
+          "id": "record",
+          "label": "s1mple在這一年的表現堪稱CSGO歷史之最，八座MVP前無古人。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "remembered",
+          "label": "黑金王朝完美封關，這支NAVI將被永遠銘記。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "reign",
+          "label": "他們在2021年的統治力無人能及。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "perfect",
+          "label": "我們以最完美的方式結束了這一年，黑金王朝的統治無人能撼動。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "mvp",
+          "label": "這是隊史最佳賽季，s1mple的八座MVP是對他巔峰統治力的最佳證明。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "history",
+          "label": "連續四座線下大賽冠軍，我們正在書寫屬於自己的歷史。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_big_gade_german_roster_2021_12_28",
+      "title": "BIG宣布新賽季選手名單，簽下丹麥指揮gade重回全德語陣容",
+      "tier": 5,
+      "isMajor": false,
+      "fireHour": 8664,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "big_2021",
+      "onFireEffects": [],
+      "onFireRosterOps": [
+        {
+          "type": "join_club",
+          "playerId": "gade",
+          "clubId": "big_2021",
+          "squadStatus": "starter"
+        }
+      ],
+      "description": "BIG宣布新賽季選手名單，丹麥指揮gade將加入隊伍，BIG將重回全德語陣容。gade此前曾效力於North與Heroic，他的加入將填補隊伍在指揮位置上的空缺。BIG在2021年表現起伏不定，管理層希望透過這次調整為隊伍帶來更穩定的戰術執行力與溝通效率。",
+      "firstPersonDescription": "我們正式宣布新賽季的選手名單，丹麥指揮gade將加入隊伍，BIG將重回全德語陣容。gade此前曾效力於North與Heroic，他的指揮風格與德國選手的紀律性相輔相成。管理層相信這項調整能為隊伍帶來更穩定的戰術執行力。我們將以這套全新陣容備戰2022年的賽事。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "comms",
+          "label": "德語陣容的溝通優勢或許能讓他們走得更遠。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "watch",
+          "label": "丹麥指揮登陸德國，這筆交易值得觀察。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "welcome",
+          "label": "歡迎gade加入，這是指揮位置的關鍵補強。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "german",
+          "label": "重回全德語陣容將有助於提升團隊溝通效率。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_ropz_leaves_mouz_2021_12_29",
+      "title": "ropz告別mousesports，預計加盟FaZe",
+      "tier": 4,
+      "isMajor": true,
+      "fireHour": 8688,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "mouz_2021",
+      "onFireEffects": [],
+      "onFireRosterOps": [
+        {
+          "type": "release",
+          "playerId": "ropz",
+          "squadStatus": "bench",
+          "clubId": ""
+        }
+      ],
+      "description": "ropz正式告別mousesports，結束他近五年的MOUZ生涯。他在告別聲明中表示，從FPL被發掘並獲得證明自己的機會，從那之後他就一直在實現夢想。ropz在MOUZ期間贏得九座冠軍，並在2018年至2020年間連續三年入選HLTV年度TOP20，最高排名第七位。根據多方報導，ropz預計將加盟FaZe Clan，與前指揮karrigan重聚。",
+      "firstPersonDescription": "我們正式宣布ropz將在年底合約到期後離開隊伍，結束他近五年的MOUZ生涯。ropz在告別聲明中表示，這段旅程從一開始就令他難以置信，他被從FPL中發掘並獲得證明自己的機會，從那之後他就一直在實現夢想。ropz在MOUZ期間幫助隊伍贏得九座冠軍獎盃，並在2018年至2020年間連續三年入選HLTV年度TOP20，最高排名第七位。根據多方報導，ropz預計將加盟FaZe Clan，與前指揮karrigan重聚。我們感謝ropz多年來的貢獻，祝福他在新的篇章中一切順利。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "chapter",
+          "label": "愛沙尼亞天才結束了他在MOUZ的傳奇篇章。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "faze",
+          "label": "FaZe銀河艦隊的最後一塊拼圖即將就位。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "reunion",
+          "label": "他與karrigan的重聚令人期待。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝ropz五年來的付出，他將永遠是MOUZ歷史的一部分。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "respect",
+          "label": "他的離開令人惋惜，但我們尊重他的選擇，祝福他前程似錦。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hist_liquid_rebuild_2021_12_30",
+      "title": "Liquid宣布FalleN、Grim、Stewie2K離隊，nitr0回歸、shox與oSee加盟",
+      "tier": 3,
+      "isMajor": true,
+      "fireHour": 8712,
+      "mtthDays": 99999,
+      "publicVisible": true,
+      "subjectClubId": "liquid_2021",
+      "onFireEffects": [
+        {
+          "type": "add_board",
+          "value": -2
+        },
+        {
+          "type": "add_estate",
+          "key": "public_opinion",
+          "value": -1
+        },
+        {
+          "type": "add_estate",
+          "key": "veterans",
+          "value": 2
+        },
+        {
+          "type": "add_estate",
+          "key": "management",
+          "value": 1
+        }
+      ],
+      "onFireRosterOps": [
+        {
+          "type": "release",
+          "playerId": "fallen",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "release",
+          "playerId": "grim",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "release",
+          "playerId": "stewie2k",
+          "squadStatus": "bench",
+          "clubId": ""
+        },
+        {
+          "type": "join_club",
+          "playerId": "nitr0",
+          "clubId": "liquid_2021",
+          "squadStatus": "starter"
+        },
+        {
+          "type": "join_club",
+          "playerId": "shox",
+          "clubId": "liquid_2021",
+          "squadStatus": "starter"
+        },
+        {
+          "type": "join_club",
+          "playerId": "osee",
+          "clubId": "liquid_2021",
+          "squadStatus": "starter"
+        }
+      ],
+      "description": "Liquid正式確認FalleN、Stewie2K與Grim離隊，同時宣布nitr0將從Valorant回歸CSGO賽場，shox首次離開法國CS環境加盟Liquid，oSee從Extra Salt加入擔任專職狙擊手。Liquid在2021年表現不佳，世界排名一度跌至第十六位，管理層決定進行全面重組，僅保留EliGE與NAF兩名核心選手。這次重組是北美CS近年來規模最大的陣容變動之一。",
+      "firstPersonDescription": "我們正式宣布2022賽季的陣容重組計畫。Gabriel FalleN Toledo、Jake Stewie2K Yip與Michael Grim Wince將離開隊伍。同時我們歡迎Nick nitr0 Cannella的回歸，他將從Valorant重返CSGO賽場。Richard shox Papillon將首次離開法國CS環境，加入我們的國際陣容。Josh oSee Ohm將從Extra Salt加盟，擔任隊伍的專職狙擊手。這是一次徹底的重建，我們的目標是重返世界頂級行列。",
+      "triggers": [
+        {
+          "type": "always"
+        }
+      ],
+      "options": [
+        {
+          "id": "quake",
+          "label": "北美CS最大規模的重組正在進行中。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "shox",
+          "label": "shox首次離開法國環境，這筆交易意義深遠。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "nitr0",
+          "label": "nitr0的回歸將為Liquid帶來急需的指揮能力。",
+          "tooltip": "",
+          "effects": []
+        }
+      ],
+      "firstPersonOptions": [
+        {
+          "id": "thanks",
+          "label": "感謝離隊選手們的付出，我們將帶著新的陣容迎接新的挑戰。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "welcome",
+          "label": "歡迎nitr0回歸，shox與oSee的加入將為我們注入新的活力。",
+          "tooltip": "",
+          "effects": []
+        },
+        {
+          "id": "confidence",
+          "label": "這是北美CS最大規模的重組，我們對未來充滿信心。",
+          "tooltip": "",
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

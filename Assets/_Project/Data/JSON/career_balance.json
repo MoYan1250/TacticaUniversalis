@@ -1,0 +1,24 @@
+{
+  "balance": {
+    "schemaVersion": 1,
+    "startingYear": 2021,
+    "startingMonth": 1,
+    "startingDay": 1,
+    "startingHour": 0,
+    "hoursPerTrainingTick": 168,
+    "weeksPerYear": 52,
+    "baseTrainingPointsMilli": 1200,
+    "inactivityRustWeeks": 8,
+    "inactivityRustProficiencyLoss": 2,
+    "inactivityRustAttributeLoss": 1,
+    "marketValueMinimum": 10000,
+    "marketValueMaximum": 15000000,
+    "rankingHalfLifeHours": 4368,
+    "rankingWindowHours": 8736,
+    "rankingHalfLifeWeeks": 26,
+    "rankingWindowWeeks": 52,
+    "facilityBaseUpgradeCost": 100000,
+    "facilityBaseMaintenance": 3000,
+    "startingCash": 1000000
+  }
+}

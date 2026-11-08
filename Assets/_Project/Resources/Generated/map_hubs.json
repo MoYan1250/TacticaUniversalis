@@ -1,0 +1,118 @@
+{
+
+  "schemaVersion": 1,
+
+  "hubs": [
+
+    {
+
+      "id": "europe",
+
+      "displayName": "歐洲",
+
+      "region": "Europe",
+
+      "subtitle": "RMR 歐洲賽區",
+
+      "x": 0.515,
+
+      "y": 0.705,
+
+      "color": "#163A8C"
+
+    },
+
+    {
+
+      "id": "cis",
+
+      "displayName": "獨聯體",
+
+      "region": "CIS",
+
+      "subtitle": "RMR 獨聯體賽區",
+
+      "x": 0.575,
+
+      "y": 0.720,
+
+      "color": "#D32F2F"
+
+    },
+
+    {
+
+      "id": "south_america",
+
+      "displayName": "南美",
+
+      "region": "SouthAmerica",
+
+      "subtitle": "RMR 南美賽區",
+
+      "x": 0.335,
+
+      "y": 0.335,
+
+      "color": "#2E9B4F"
+
+    },
+
+    {
+
+      "id": "north_america",
+
+      "displayName": "北美",
+
+      "region": "NorthAmerica",
+
+      "subtitle": "RMR 北美賽區",
+
+      "x": 0.175,
+
+      "y": 0.595,
+
+      "color": "#7B3FE4"
+
+    },
+
+    {
+
+      "id": "asia",
+
+      "displayName": "亞洲",
+
+      "region": "Asia",
+
+      "subtitle": "RMR 亞洲賽區",
+
+      "x": 0.785,
+
+      "y": 0.555,
+
+      "color": "#F5C542"
+
+    },
+
+    {
+
+      "id": "oceania",
+
+      "displayName": "大洋洲",
+
+      "region": "Oceania",
+
+      "subtitle": "RMR 大洋洲賽區",
+
+      "x": 0.830,
+
+      "y": 0.280,
+
+      "color": "#FF8C38"
+
+    }
+
+  ]
+
+}
+

@@ -1,0 +1,11 @@
+{
+  "name": "TacticaUniversalis.Presentation",
+  "rootNamespace": "TacticaUniversalis.Presentation",
+  "references": [
+    "TacticaUniversalis.Domain",
+    "TacticaUniversalis.Application",
+    "TacticaUniversalis.Infrastructure",
+    "Unity.ugui"
+  ],
+  "autoReferenced": true
+}

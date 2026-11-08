@@ -1,0 +1,36 @@
+        private static void ClearStatusMetrics(StatMetricSlot[] metrics)
+        {
+            if (metrics == null)
+                return;
+            for (int i = 0; i < metrics.Length; i++)
+            {
+                if (metrics[i]?.Value != null)
+                    metrics[i].Value.text = string.Empty;
+            }
+        }
+
+        private static void BindStatusMetrics(StatMetricSlot[] metrics, PlayerStat stat, bool alive = true)
+        {
+            if (metrics == null || metrics.Length < 6)
+                return;
+            Color frontTint = alive ? TextPrimary : DeadRowText;
+            Color backTint = alive ? TextMuted : DeadRowMuted;
+            SetMetric(metrics[0], stat.Kills.ToString(), frontTint);
+            SetMetric(metrics[1], stat.Deaths.ToString(), frontTint);
+            SetMetric(metrics[2], stat.Assists.ToString(), frontTint);
+            SetMetric(metrics[3], $"{stat.Stamina:0}", backTint);
+            SetMetric(metrics[4], $"{stat.Mentality:0}", backTint);
+            SetMetric(metrics[5], $"{stat.Form:0}", backTint);
+        }
+
+        private static void SetMetric(StatMetricSlot slot, string value, Color tint)
+        {
+            if (slot?.Value != null)
+            {
+                slot.Value.text = value;
+                slot.Value.color = tint;
+            }
+            if (slot?.Icon != null)
+                slot.Icon.color = tint;
+        }
+

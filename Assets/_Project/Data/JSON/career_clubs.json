@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "clubs": [
+    {
+      "id": "astralis_2021",
+      "displayName": "Astralis",
+      "region": "Europe",
+      "hltvRank": 1,
+      "hltvPoints": 1000,
+      "fame": 100,
+      "ambition": 95,
+      "startingCash": 1800000,
+      "playerIds": [
+        "Xyp9x",
+        "dupreeh",
+        "gla1ve",
+        "device",
+        "magisk"
+      ],
+      "isPublicCompany": true,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 300
+    },
+    {
+      "id": "vitality_2021",
+      "displayName": "Vitality",
+      "region": "Europe",
+      "hltvRank": 2,
+      "hltvPoints": 900,
+      "fame": 90,
+      "ambition": 95,
+      "startingCash": 1720000,
+      "playerIds": [
+        "shox",
+        "rpk",
+        "apex",
+        "ZywOo",
+        "misutaaa"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 600
+    },
+    {
+      "id": "navi_2021",
+      "displayName": "NAVI",
+      "region": "Europe",
+      "hltvRank": 3,
+      "hltvPoints": 604,
+      "fame": 60,
+      "ambition": 95,
+      "startingCash": 1483200,
+      "playerIds": [
+        "flamie",
+        "s1mple",
+        "electronic",
+        "boombl4",
+        "perfecto"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "CIS",
+      "rmrCircuitSeed": 600
+    },
+    {
+      "id": "big_2021",
+      "displayName": "BIG",
+      "region": "Europe",
+      "hltvRank": 4,
+      "hltvPoints": 580,
+      "fame": 58,
+      "ambition": 95,
+      "startingCash": 1464000,
+      "playerIds": [
+        "tabsen",
+        "tizian",
+        "syrson",
+        "xantares",
+        "k1to"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 300
+    },
+    {
+      "id": "heroic_2021",
+      "displayName": "Heroic",
+      "region": "Europe",
+      "hltvRank": 5,
+      "hltvPoints": 447,
+      "fame": 45,
+      "ambition": 95,
+      "startingCash": 1357600,
+      "playerIds": [
+        "cadian",
+        "b0rup",
+        "niko",
+        "stavn",
+        "teses"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 600
+    },
+    {
+      "id": "furia_2021",
+      "displayName": "FURIA",
+      "region": "Americas",
+      "hltvRank": 6,
+      "hltvPoints": 425,
+      "fame": 42,
+      "ambition": 95,
+      "startingCash": 1340000,
+      "playerIds": [
+        "hen1",
+        "art",
+        "yuurih",
+        "vini",
+        "kscerato"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "SouthAmerica",
+      "rmrCircuitSeed": 600
+    },
+    {
+      "id": "og_2021",
+      "displayName": "OG",
+      "region": "Europe",
+      "hltvRank": 7,
+      "hltvPoints": 25,
+      "fame": 4,
+      "ambition": 73,
+      "startingCash": 1020000,
+      "playerIds": [
+        "nbk",
+        "valde",
+        "aleksib",
+        "issaa",
+        "mantuu"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 300
+    },
+    {
+      "id": "g2_2021",
+      "displayName": "G2",
+      "region": "Europe",
+      "hltvRank": 8,
+      "hltvPoints": 316,
+      "fame": 32,
+      "ambition": 95,
+      "startingCash": 1252800,
+      "playerIds": [
+        "NiKo",
+        "huNter-",
+        "kennyS",
+        "amanek",
+        "nexa"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 300
+    },
+    {
+      "id": "liquid_2021",
+      "displayName": "Liquid",
+      "region": "Americas",
+      "hltvRank": 9,
+      "hltvPoints": 313,
+      "fame": 31,
+      "ambition": 95,
+      "startingCash": 1250400,
+      "playerIds": [
+        "naf",
+        "elige",
+        "stewie2k",
+        "grim",
+        "fallen"
+      ],
+      "isPublicCompany": true,
+      "rmrRegion": "NorthAmerica",
+      "rmrCircuitSeed": 600
+    },
+    {
+      "id": "mouz_2021",
+      "displayName": "MOUZ",
+      "region": "Europe",
+      "hltvRank": 10,
+      "hltvPoints": 309,
+      "fame": 31,
+      "ambition": 95,
+      "startingCash": 1247200,
+      "playerIds": [
+        "karrigan",
+        "chrisj",
+        "frozen",
+        "ropz",
+        "bymas"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 0
+    },
+    {
+      "id": "virtuspro_2021",
+      "displayName": "Virtus.pro",
+      "region": "Europe",
+      "hltvRank": 11,
+      "hltvPoints": 296,
+      "fame": 30,
+      "ambition": 94,
+      "startingCash": 1236800,
+      "playerIds": [
+        "sanji",
+        "buster",
+        "qikert",
+        "jame",
+        "yekindar"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "CIS",
+      "rmrCircuitSeed": 300
+    },
+    {
+      "id": "complexity_2021",
+      "displayName": "Complexity",
+      "region": "North America",
+      "hltvRank": 12,
+      "hltvPoints": 20,
+      "fame": 4,
+      "ambition": 70,
+      "startingCash": 1016000,
+      "playerIds": [
+        "jks",
+        "rush",
+        "k0nfig",
+        "poizon",
+        "blamef"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "NorthAmerica",
+      "rmrCircuitSeed": 300
+    },
+    {
+      "id": "faze_2021",
+      "displayName": "FaZe",
+      "region": "Europe",
+      "hltvRank": 13,
+      "hltvPoints": 227,
+      "fame": 23,
+      "ambition": 93,
+      "startingCash": 1181600,
+      "playerIds": [
+        "olofmeister",
+        "rain",
+        "kjaerbye",
+        "coldzera",
+        "broky"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 100
+    },
+    {
+      "id": "fnatic_2021",
+      "displayName": "fnatic",
+      "region": "Europe",
+      "hltvRank": 14,
+      "hltvPoints": 18,
+      "fame": 4,
+      "ambition": 67,
+      "startingCash": 1014400,
+      "playerIds": [
+        "flusha",
+        "jw",
+        "krimz",
+        "golden",
+        "brollan"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 100
+    },
+    {
+      "id": "gambit_2021",
+      "displayName": "Gambit",
+      "region": "Europe",
+      "hltvRank": 15,
+      "hltvPoints": 190,
+      "fame": 19,
+      "ambition": 92,
+      "startingCash": 1152000,
+      "playerIds": [
+        "hobbit",
+        "interz",
+        "Ax1Le",
+        "sh1ro",
+        "nafany"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "CIS",
+      "rmrCircuitSeed": 600
+    },
+    {
+      "id": "nip_2021",
+      "displayName": "NIP",
+      "region": "Europe",
+      "hltvRank": 16,
+      "hltvPoints": 187,
+      "fame": 19,
+      "ambition": 92,
+      "startingCash": 1149600,
+      "playerIds": [
+        "twist",
+        "rez",
+        "hampus",
+        "nawwk",
+        "plopski"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 600
+    },
+    {
+      "id": "eg_2021",
+      "displayName": "Evil Geniuses",
+      "region": "Americas",
+      "hltvRank": 17,
+      "hltvPoints": 187,
+      "fame": 19,
+      "ambition": 91,
+      "startingCash": 1149600,
+      "playerIds": [
+        "stanislaw",
+        "tarik",
+        "brehze",
+        "ethan",
+        "cerq"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "NorthAmerica",
+      "rmrCircuitSeed": 600
+    },
+    {
+      "id": "godsent_2021",
+      "displayName": "GODSENT",
+      "region": "Americas",
+      "hltvRank": 18,
+      "hltvPoints": 162,
+      "fame": 16,
+      "ambition": 91,
+      "startingCash": 1129600,
+      "playerIds": [
+        "zehn",
+        "emi",
+        "styko",
+        "maden",
+        "farlig"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "SouthAmerica",
+      "rmrCircuitSeed": 300
+    },
+    {
+      "id": "spirit_2021",
+      "displayName": "Spirit",
+      "region": "Europe",
+      "hltvRank": 19,
+      "hltvPoints": 148,
+      "fame": 15,
+      "ambition": 90,
+      "startingCash": 1118400,
+      "playerIds": [
+        "chopper",
+        "mir",
+        "sdy",
+        "idisbalance",
+        "magixx"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "CIS",
+      "rmrCircuitSeed": 300
+    },
+    {
+      "id": "mibr_2021",
+      "displayName": "MIBR",
+      "region": "South America",
+      "hltvRank": 21,
+      "hltvPoints": 17,
+      "fame": 4,
+      "ambition": 67,
+      "startingCash": 1013600,
+      "playerIds": [
+        "kngv",
+        "lucas1",
+        "trk",
+        "leo-drk",
+        "vsm"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "SouthAmerica",
+      "rmrCircuitSeed": 300
+    },
+    {
+      "id": "cloud9_2021",
+      "displayName": "Cloud9",
+      "region": "Europe",
+      "hltvRank": 22,
+      "hltvPoints": 13,
+      "fame": 4,
+      "ambition": 60,
+      "startingCash": 1010400,
+      "playerIds": [
+        "alex",
+        "woxic",
+        "es3tag",
+        "floppy",
+        "mezii"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 0
+    },
+    {
+      "id": "mad_lions_2021",
+      "displayName": "MAD Lions",
+      "region": "Europe",
+      "hltvRank": 23,
+      "hltvPoints": 6,
+      "fame": 4,
+      "ambition": 55,
+      "startingCash": 1004800,
+      "playerIds": [
+        "hooxi",
+        "acoR",
+        "refrezh",
+        "sjuush",
+        "roej"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 0
+    },
+    {
+      "id": "saw_2021",
+      "displayName": "SAW",
+      "region": "Europe",
+      "hltvRank": 24,
+      "hltvPoints": 4,
+      "fame": 4,
+      "ambition": 55,
+      "startingCash": 1003200,
+      "playerIds": [
+        "arki",
+        "mutiris",
+        "roman",
+        "just",
+        "stadodo"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 0
+    },
+    {
+      "id": "riders_2021",
+      "displayName": "Movistar Riders",
+      "region": "Europe",
+      "hltvRank": 40,
+      "hltvPoints": 35,
+      "fame": 4,
+      "ambition": 80,
+      "startingCash": 1028000,
+      "playerIds": [
+        "steel",
+        "larsen",
+        "alex_8371",
+        "mopoz",
+        "shokz"
+      ],
+      "isPublicCompany": false,
+      "rmrRegion": "Europe",
+      "rmrCircuitSeed": 0
+    }
+  ]
+}

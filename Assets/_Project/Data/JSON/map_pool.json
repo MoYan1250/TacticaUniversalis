@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "maps": [
+    {
+      "id": "dust2",
+      "displayName": "Dust II",
+      "playable": true,
+      "overviewResource": "Maps/dust2_overview"
+    },
+    {
+      "id": "mirage",
+      "displayName": "Mirage",
+      "playable": true,
+      "overviewResource": "Maps/mirage_overview"
+    },
+    {
+      "id": "inferno",
+      "displayName": "Inferno",
+      "playable": true,
+      "overviewResource": "Maps/inferno_overview"
+    },
+    {
+      "id": "nuke",
+      "displayName": "Nuke",
+      "playable": true,
+      "overviewResource": "Maps/nuke_overview"
+    },
+    {
+      "id": "overpass",
+      "displayName": "Overpass",
+      "playable": true,
+      "overviewResource": "Maps/overpass_overview"
+    },
+    {
+      "id": "train",
+      "displayName": "Train",
+      "playable": true,
+      "overviewResource": "Maps/train_overview"
+    },
+    {
+      "id": "vertigo",
+      "displayName": "Vertigo",
+      "playable": true,
+      "overviewResource": "Maps/vertigo_overview"
+    }
+  ]
+}

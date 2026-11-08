@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "lineups": [
+    { "mapId": "dust2", "fromZoneId": "outside_long", "toZoneId": "a_long", "kinds": ["smoke", "flash"], "side": "t", "priority": 90, "tag": "outside_long_a_long" },
+    { "mapId": "dust2", "fromZoneId": "long_doors", "toZoneId": "a_long", "kinds": ["flash"], "side": "t", "priority": 85, "tag": "long_doors_flash" },
+    { "mapId": "dust2", "fromZoneId": "top_mid", "toZoneId": "xbox", "kinds": ["smoke"], "side": "t", "priority": 95, "tag": "xbox_smoke" },
+    { "mapId": "dust2", "fromZoneId": "mid", "toZoneId": "ct_mid", "kinds": ["smoke"], "side": "t", "priority": 88, "tag": "mid_ct_smoke" },
+    { "mapId": "dust2", "fromZoneId": "mid_doors", "toZoneId": "ct_mid", "kinds": ["smoke", "flash"], "side": "t", "priority": 92, "tag": "mid_doors_ct" },
+    { "mapId": "dust2", "fromZoneId": "t_spawn", "toZoneId": "mid_doors", "kinds": ["smoke"], "side": "t", "priority": 80, "tag": "spawn_mid_doors" },
+    { "mapId": "dust2", "fromZoneId": "b_tunnels", "toZoneId": "b_doors", "kinds": ["smoke"], "side": "t", "priority": 90, "tag": "tunnels_b_doors" },
+    { "mapId": "dust2", "fromZoneId": "lower_tunnels", "toZoneId": "b_site", "kinds": ["smoke", "flash"], "side": "t", "priority": 88, "tag": "lower_b_site" },
+    { "mapId": "dust2", "fromZoneId": "b_tunnels", "toZoneId": "b_site", "kinds": ["fire", "flash"], "side": "t", "priority": 86, "tag": "tunnels_b_exec" },
+    { "mapId": "dust2", "fromZoneId": "cat", "toZoneId": "a_site", "kinds": ["smoke", "flash"], "side": "t", "priority": 90, "tag": "cat_a_site" },
+    { "mapId": "dust2", "fromZoneId": "a_short", "toZoneId": "a_site", "kinds": ["flash", "fire"], "side": "t", "priority": 87, "tag": "short_a_exec" },
+    { "mapId": "dust2", "fromZoneId": "ct_spawn", "toZoneId": "mid_doors", "kinds": ["smoke"], "side": "ct", "priority": 90, "tag": "ct_mid_doors" },
+    { "mapId": "dust2", "fromZoneId": "a_site", "toZoneId": "a_short", "kinds": ["flash"], "side": "ct", "priority": 85, "tag": "a_retake_short" },
+    { "mapId": "dust2", "fromZoneId": "a_site", "toZoneId": "a_long", "kinds": ["smoke"], "side": "ct", "priority": 84, "tag": "a_retake_long" },
+    { "mapId": "dust2", "fromZoneId": "b_site", "toZoneId": "b_doors", "kinds": ["flash", "fire"], "side": "ct", "priority": 88, "tag": "b_hold_doors" },
+    { "mapId": "dust2", "fromZoneId": "pit", "toZoneId": "a_long", "kinds": ["flash"], "side": "any", "priority": 75, "tag": "pit_long_flash" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "TacticaUniversalis.Infrastructure.Editor",
+  "rootNamespace": "TacticaUniversalis.Infrastructure.Editor",
+  "references": [
+    "TacticaUniversalis.Domain",
+    "TacticaUniversalis.Infrastructure",
+    "TacticaUniversalis.Application"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": true
+}

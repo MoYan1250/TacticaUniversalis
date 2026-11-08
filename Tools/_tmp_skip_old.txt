@@ -1,0 +1,77 @@
+        private void Skip()
+        {
+            if (IsGeneralBattleMode())
+                return;
+            if (_skippingMatch)
+                return;
+
+            StopAllMovement();
+            if (_playback != null)
+            {
+                StopCoroutine(_playback);
+                _playback = null;
+            }
+            _awaitingCard = false;
+            _awaitingTacticalCards = false;
+            _awaitingTimeout = false;
+            _awaitingFocus = false;
+            _selectedCard = null;
+            HideCardPicker();
+            HideTacticalCardPicker();
+            HideTimeoutPicker();
+            HideFocusPicker();
+            HideRoundWinBanner();
+
+            _playback = StartCoroutine(SkipMatchRoutine());
+        }
+
+        private IEnumerator SkipMatchRoutine()
+        {
+            _skippingMatch = true;
+            _skipBusyStartedAt = Time.unscaledTime;
+            SetSkipBusyVisible(true);
+            RefreshSkipBusyHud();
+            try
+            {
+                // Yield each round so the busy spinner and elapsed clock can update.
+                yield return null;
+
+                if (_session != null)
+                {
+                    while (!_session.IsFinished)
+                    {
+                        if (!_session.AutoPlayOneRound(myTeamId))
+                            break;
+                        RefreshSkipBusyHud();
+                        yield return null;
+                    }
+                }
+
+                _result = _session?.Result;
+                ApplySkippedMatchPresentation();
+
+                if (_careerOfficialMatch && _result != null && _result.winnerTeamId != null)
+                    yield return ShowOfficialResultFlow();
+            }
+            finally
+            {
+                SetSkipBusyVisible(false);
+                _skippingMatch = false;
+                _playback = null;
+            }
+        }
+
+        private void TickSkipBusySpinner()
+        {
+            if (!_skippingMatch || _skipBusySpinner == null || !_skipBusySpinner.gameObject.activeSelf)
+                return;
+            _skipBusySpinner.rectTransform.Rotate(0f, 0f, -360f * Time.unscaledDeltaTime);
+            RefreshSkipBusyHud();
+        }
+
+        private void SetSkipBusyVisible(bool visible)
+        {
+            if (_skipBusySpinner != null)
+                _skipBusySpinner.gameObject.SetActive(visible);
+        }
+

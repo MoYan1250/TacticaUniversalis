@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "rosterDeductionFraction": 0.2,
+  "notes": "Stockholm 2021 RMR point tables and Major spot counts are implemented in Domain RmrRules. This file documents the balance contract for content tooling.",
+  "regions": [
+    {
+      "id": "Europe",
+      "legends": 3,
+      "challengers": 6,
+      "contenders": 2
+    },
+    {
+      "id": "CIS",
+      "legends": 2,
+      "challengers": 2,
+      "contenders": 1
+    },
+    {
+      "id": "NorthAmerica",
+      "legends": 3,
+      "challengers": 1,
+      "contenders": 1
+    },
+    {
+      "id": "SouthAmerica",
+      "legends": 0,
+      "challengers": 0,
+      "contenders": 1
+    },
+    {
+      "id": "Asia",
+      "legends": 0,
+      "challengers": 0,
+      "contenders": 1
+    },
+    {
+      "id": "Oceania",
+      "legends": 0,
+      "challengers": 0,
+      "contenders": 1
+    }
+  ],
+  "rounds": ["Circuit2020", "Rmr1", "Rmr2", "Rmr3"]
+}

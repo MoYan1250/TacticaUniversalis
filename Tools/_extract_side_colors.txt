@@ -1,0 +1,16 @@
+        private void UpdateSidePanelColors()
+        {
+            if (_leftStatsPanel == null || _rightStatsPanel == null)
+                return;
+
+            string leftId = myTeamId;
+            string rightId = _opponentTeamId;
+            bool leftIsT = TeamIsTerrorist(leftId, _currentRound);
+            bool rightIsT = TeamIsTerrorist(rightId, _currentRound);
+            _leftStatsPanel.color = leftIsT ? TPanel : CtPanel;
+            _rightStatsPanel.color = rightIsT ? TPanel : CtPanel;
+            RefreshMarkerSideColors();
+            RefreshStatPanels();
+            UpdateAliveCountHud();
+        }
+

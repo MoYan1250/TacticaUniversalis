@@ -1,0 +1,7 @@
+{
+  "name": "TacticaUniversalis.Domain",
+  "rootNamespace": "TacticaUniversalis.Domain",
+  "references": [],
+  "autoReferenced": true,
+  "noEngineReferences": true
+}

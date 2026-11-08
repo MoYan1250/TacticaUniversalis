@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "trees": [
+    {
+      "id": "navi_2021_main",
+      "clubId": "navi_2021",
+      "title": "NAVI 2021 路線",
+      "nodes": [
+        {
+          "id": "navi_rise_day",
+          "title": "崛起之日",
+          "description": "",
+          "flavor": "2021 年冬歇剛過，董事會的簡報裡只有冠軍與排名。外界仍把 NAVI 當成必須立刻交卷的豪門，更衣室卻還在等一句本季到底要衝多遠。",
+          "goal": "先對內對外把本季野心釘死，讓後續陣容與賽程都有同一個方向。開局即可領取。",
+          "prerequisites": [],
+          "exclusiveGroup": "",
+          "completeTriggers": [ { "type": "always" } ],
+          "effects": [
+            { "type": "add_board", "value": 1 },
+            { "type": "add_exposure", "value": 1 },
+            { "type": "add_estate", "key": "public_opinion", "value": 1 },
+            { "type": "log", "key": "任務完成：崛起之日" }
+          ],
+          "rosterOps": [],
+          "uiColumn": 0,
+          "uiRow": 0
+        },
+        {
+          "id": "navi_third_gun",
+          "title": "第三把槍",
+          "description": "",
+          "flavor": "替補席上的 b1t 已經等不及。教練組算過帳：s1mple 與 electroNic 兩條槍線之外，第三條輸出若真能站穩，整隊上限會比雙星架構更兇。",
+          "goal": "正式把 b1t 定為先發方向，為後續三核磨合與四月升上主隊鋪路。",
+          "prerequisites": [ "navi_rise_day" ],
+          "exclusiveGroup": "",
+          "completeTriggers": [ { "type": "always" } ],
+          "effects": [
+            { "type": "set_flag", "key": "navi_path_b1t", "durationDays": 0 },
+            { "type": "add_estate", "key": "star_players", "value": 2 },
+            { "type": "add_estate", "key": "reserves", "value": 2 },
+            { "type": "add_estate", "key": "veterans", "value": -2 },
+            { "type": "add_fame", "value": 1 },
+            { "type": "log", "key": "任務完成：第三把槍" }
+          ],
+          "rosterOps": [],
+          "uiColumn": 0,
+          "uiRow": 1
+        },
+        {
+          "id": "navi_mic_to_youth",
+          "title": "把麥克風遞給少年",
+          "description": "",
+          "flavor": "選定路線還不夠，更衣室仍在觀察教練敢不敢把話語權分給新人。若只在戰術板後調整，媒體與隊友都會解讀成暫時試用。",
+          "goal": "公開表態支持 b1t，讓三核敘事從內部決策變成對外的正式立場。",
+          "prerequisites": [ "navi_third_gun" ],
+          "exclusiveGroup": "",
+          "completeTriggers": [ { "type": "always" } ],
+          "effects": [
+            { "type": "add_estate", "key": "reserves", "value": 1 },
+            { "type": "add_roster_pressure", "value": -3 },
+            { "type": "add_exposure", "value": 1 },
+            { "type": "add_fans", "value": 500 },
+            { "type": "log", "key": "任務完成：把麥克風遞給少年" }
+          ],
+          "rosterOps": [],
+          "uiColumn": 0,
+          "uiRow": 2
+        },
+        {
+          "id": "navi_triple_hold",
+          "title": "三槍架點",
+          "description": "",
+          "flavor": "紙面三核與實戰三核是兩回事。s1mple 要撕開空間，electroNic 要接應補槍，b1t 得在關鍵點上把火力架住，少一條線整個推進就會斷。",
+          "goal": "用正式賽把這套輸出跑順。累積至少五場正式賽後可領取。",
+          "prerequisites": [ "navi_mic_to_youth" ],
+          "exclusiveGroup": "",
+          "completeTriggers": [ { "type": "official_matches_min", "value": 5 } ],
+          "effects": [
+            { "type": "add_fame", "value": 2 },
+            { "type": "add_estate", "key": "star_players", "value": 2 },
+            { "type": "add_fans", "value": 1500 },
+            { "type": "add_roster_fame", "value": 1 },
+            { "type": "log", "key": "任務完成：三槍架點" }
+          ],
+          "rosterOps": [],
+          "uiColumn": 0,
+          "uiRow": 3
+        },
+        {
+          "id": "navi_eight_years_due",
+          "title": "八年之期已到",
+          "description": "",
+          "flavor": "斯德哥爾摩 Major 的大門已經打開。對 NAVI 而言，這座獎盃等了太久，每一張賽程表都像在提醒八年空窗的重量。",
+          "goal": "站上 Major 賽場，把本季敘事推進最高舞台。該賽開打且你在名單內即可領取，無須先奪冠。",
+          "prerequisites": [ "navi_triple_hold" ],
+          "exclusiveGroup": "",
+          "completeTriggers": [ { "type": "competition_started", "key": "pgl_major_stockholm_2021" } ],
+          "effects": [
+            { "type": "add_exposure", "value": 2 },
+            { "type": "add_board", "value": 1 },
+            { "type": "add_estate", "key": "public_opinion", "value": 2 },
+            { "type": "add_roster_pressure", "value": 2 },
+            { "type": "log", "key": "任務完成：八年之期已到" }
+          ],
+          "rosterOps": [],
+          "uiColumn": 0,
+          "uiRow": 4
+        },
+        {
+          "id": "navi_major_finale",
+          "title": "Major之路的落幕",
+          "description": "",
+          "flavor": "北歐的決賽夜會把一整年的輿論收成兩個字：要嘛冠軍，要嘛藉口。三核火力、戰術紀律與關鍵回合的穩定，都必須在同一段 Major 征途上同時交卷。",
+          "goal": "贏得 PGL Major Stockholm 2021 冠軍，讓這條路在斯德哥爾摩收束。",
+          "prerequisites": [ "navi_eight_years_due" ],
+          "exclusiveGroup": "",
+          "completeTriggers": [
+            { "type": "competition_champion", "key": "pgl_major_stockholm_2021:navi_2021" }
+          ],
+          "effects": [
+            { "type": "add_fame", "value": 4 },
+            { "type": "add_exposure", "value": 4 },
+            { "type": "add_fans", "value": 5000 },
+            { "type": "add_board", "value": 3 },
+            { "type": "add_estate", "key": "star_players", "value": 2 },
+            { "type": "set_flag", "key": "navi_stockholm_champion", "durationDays": 0 },
+            { "type": "log", "key": "任務完成：Major之路的落幕" }
+          ],
+          "rosterOps": [],
+          "uiColumn": 0,
+          "uiRow": 5
+        },
+        {
+          "id": "navi_dynasty_arrives",
+          "title": "黑金王朝的降臨",
+          "description": "",
+          "flavor": "Major 冠軍把門推開，但真正能把 NAVI 寫進統治力敘事的，是整個英特爾週期裡一座座冠軍堆出來的大滿貫。2021 年這條線的最後一塊拼圖，是 ESL Pro League Season 14。",
+          "goal": "完成英特爾大滿貫：除斯德哥爾摩 Major 外，還須實際拿下 EPL S14 冠軍。週期前幾站視為已累積，缺這一站就不能領。",
+          "prerequisites": [ "navi_major_finale" ],
+          "exclusiveGroup": "",
+          "completeTriggers": [
+            { "type": "competition_champion", "key": "esl_pro_league_season_14:navi_2021" }
+          ],
+          "effects": [
+            { "type": "add_fame", "value": 5 },
+            { "type": "add_exposure", "value": 5 },
+            { "type": "add_fans", "value": 8000 },
+            { "type": "add_board", "value": 4 },
+            { "type": "add_roster_fame", "value": 2 },
+            { "type": "add_estate", "key": "star_players", "value": 3 },
+            { "type": "add_estate", "key": "public_opinion", "value": 3 },
+            { "type": "set_flag", "key": "navi_grand_slam_claimed", "durationDays": 0 },
+            { "type": "log", "key": "任務完成：黑金王朝的降臨" }
+          ],
+          "rosterOps": [],
+          "uiColumn": 0,
+          "uiRow": 6
+        }
+      ]
+    }
+  ]
+}

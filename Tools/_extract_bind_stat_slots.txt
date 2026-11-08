@@ -1,0 +1,64 @@
+        private void BindStatSlots(
+            List<Text> slots, List<Text> roundKillSlots, List<StatMetricSlot[]> statusRows, TeamDefinition team)
+        {
+            bool leftSide = ReferenceEquals(slots, _leftStatSlots);
+            List<Image> jerseys = leftSide ? _leftJerseyBadges : _rightJerseyBadges;
+            List<Text> jerseyNums = leftSide ? _leftJerseyNumbers : _rightJerseyNumbers;
+            List<Image> rows = leftSide ? _leftStatRows : _rightStatRows;
+            List<string> rowPlayerIds = leftSide ? _leftStatPlayerIds : _rightStatPlayerIds;
+            bool teamIsT = TeamIsTerrorist(team.id, _currentRound);
+            Color roundKillColor = teamIsT ? TText : CtText;
+            Color sideColor = SideBadgeColor(teamIsT);
+            for (int i = 0; i < slots.Count; i++)
+            {
+                if (i >= team.playerIds.Length)
+                {
+                    slots[i].text = string.Empty;
+                    if (i < roundKillSlots.Count)
+                        roundKillSlots[i].text = string.Empty;
+                    if (i < statusRows.Count)
+                        ClearStatusMetrics(statusRows[i]);
+                    if (i < jerseys.Count)
+                        jerseys[i].gameObject.SetActive(false);
+                    if (i < rows.Count)
+                        rows[i].color = AliveRowBg;
+                    if (i < rowPlayerIds.Count)
+                        rowPlayerIds[i] = string.Empty;
+                    continue;
+                }
+
+                string id = team.playerIds[i];
+                int number = PlayerNumber(id);
+                PlayerStat stat = _stats.TryGetValue(id, out PlayerStat found) ? found : new PlayerStat();
+                bool alive = stat.Alive;
+                Color nameColor = alive ? TextPrimary : DeadRowText;
+                Color jerseyColor = alive ? sideColor : DeadRowBadge;
+                Color jerseyNumColor = alive ? TextPrimary : DeadRowMuted;
+                Color rkColor = alive ? roundKillColor : DeadRowMuted;
+                slots[i].text = DemoZh.PlayerName(id);
+                slots[i].color = nameColor;
+                _statLines[id] = slots[i];
+                if (i < rowPlayerIds.Count)
+                    rowPlayerIds[i] = id;
+                if (i < rows.Count)
+                    rows[i].color = alive ? AliveRowBg : DeadRowBg;
+                if (i < jerseys.Count)
+                {
+                    jerseys[i].gameObject.SetActive(true);
+                    jerseys[i].color = jerseyColor;
+                }
+                if (i < jerseyNums.Count)
+                {
+                    jerseyNums[i].text = number > 0 ? number.ToString() : string.Empty;
+                    jerseyNums[i].color = jerseyNumColor;
+                }
+                if (i < roundKillSlots.Count)
+                {
+                    roundKillSlots[i].color = rkColor;
+                    roundKillSlots[i].text = stat.RoundKills > 0 ? stat.RoundKills.ToString() : string.Empty;
+                }
+                if (i < statusRows.Count)
+                    BindStatusMetrics(statusRows[i], stat, alive);
+            }
+        }
+

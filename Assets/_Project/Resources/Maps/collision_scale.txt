@@ -1,0 +1,13 @@
+# hammer units per overview pixel. Body diameter is 33, Dust II mid door is 39.
+Maps/dust2_overview 4.313725
+Maps/mirage_overview 4.166667
+Maps/inferno_overview 4.454545
+Maps/ancient_overview 4.545455
+Maps/overpass_overview 5.000000
+Maps/train_overview 4.002036
+Maps/nuke_overview 6.603774
+Maps/nuke_overview_b1 6.481481
+Maps/vertigo_overview 3.030303
+Maps/vertigo_overview_b1 2.985075
+Maps/vertigo_overview_b2 2.985075
+Maps/nuke_overview_f1 6.481481

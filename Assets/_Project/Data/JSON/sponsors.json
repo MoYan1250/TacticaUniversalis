@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "sponsors": [
+    {"id":"local_gear","displayName":"Local Gear","tier":0,"baseMonthlyFee":12000,"baseResultBonus":8000,"minimumFame":0,"minimumRankPercentile":0,"minimumExposure":20},
+    {"id":"city_net","displayName":"City Net","tier":0,"baseMonthlyFee":16000,"baseResultBonus":10000,"minimumFame":10,"minimumRankPercentile":0,"minimumExposure":25},
+    {"id":"regional_bank","displayName":"Regional Bank","tier":1,"baseMonthlyFee":32000,"baseResultBonus":25000,"minimumFame":35,"minimumRankPercentile":25,"minimumExposure":40},
+    {"id":"regional_air","displayName":"Regional Air","tier":1,"baseMonthlyFee":38000,"baseResultBonus":30000,"minimumFame":40,"minimumRankPercentile":25,"minimumExposure":45},
+    {"id":"global_chip","displayName":"Global Chip","tier":2,"baseMonthlyFee":72000,"baseResultBonus":75000,"minimumFame":60,"minimumRankPercentile":60,"minimumExposure":60},
+    {"id":"global_energy","displayName":"Global Energy","tier":2,"baseMonthlyFee":82000,"baseResultBonus":85000,"minimumFame":65,"minimumRankPercentile":60,"minimumExposure":65},
+    {"id":"elite_auto","displayName":"Elite Auto","tier":3,"baseMonthlyFee":145000,"baseResultBonus":180000,"minimumFame":80,"minimumRankPercentile":85,"minimumExposure":80},
+    {"id":"elite_tech","displayName":"Elite Tech","tier":3,"baseMonthlyFee":165000,"baseResultBonus":220000,"minimumFame":85,"minimumRankPercentile":85,"minimumExposure":85}
+  ]
+}

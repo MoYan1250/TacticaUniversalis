@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 1,
+  "teams": [
+    {
+      "id": "astralis_2021",
+      "displayName": "Astralis 2021",
+      "playerIds": [
+        "Xyp9x",
+        "dupreeh",
+        "gla1ve",
+        "device",
+        "magisk"
+      ]
+    },
+    {
+      "id": "vitality_2021",
+      "displayName": "Vitality 2021",
+      "playerIds": [
+        "shox",
+        "rpk",
+        "apex",
+        "ZywOo",
+        "misutaaa"
+      ]
+    },
+    {
+      "id": "navi_2021",
+      "displayName": "NAVI 2021",
+      "playerIds": [
+        "flamie",
+        "s1mple",
+        "electronic",
+        "boombl4",
+        "perfecto"
+      ]
+    },
+    {
+      "id": "big_2021",
+      "displayName": "BIG 2021",
+      "playerIds": [
+        "tabsen",
+        "tizian",
+        "syrson",
+        "xantares",
+        "k1to"
+      ]
+    },
+    {
+      "id": "heroic_2021",
+      "displayName": "Heroic 2021",
+      "playerIds": [
+        "cadian",
+        "b0rup",
+        "niko",
+        "stavn",
+        "teses"
+      ]
+    },
+    {
+      "id": "furia_2021",
+      "displayName": "FURIA 2021",
+      "playerIds": [
+        "hen1",
+        "art",
+        "yuurih",
+        "vini",
+        "kscerato"
+      ]
+    },
+    {
+      "id": "og_2021",
+      "displayName": "OG 2021",
+      "playerIds": [
+        "nbk",
+        "valde",
+        "aleksib",
+        "issaa",
+        "mantuu"
+      ]
+    },
+    {
+      "id": "g2_2021",
+      "displayName": "G2 2021",
+      "playerIds": [
+        "NiKo",
+        "huNter-",
+        "kennyS",
+        "amanek",
+        "nexa"
+      ]
+    },
+    {
+      "id": "liquid_2021",
+      "displayName": "Liquid 2021",
+      "playerIds": [
+        "naf",
+        "elige",
+        "stewie2k",
+        "grim"
+      ]
+    },
+    {
+      "id": "mouz_2021",
+      "displayName": "MOUZ 2021",
+      "playerIds": [
+        "karrigan",
+        "chrisj",
+        "frozen",
+        "ropz",
+        "bymas"
+      ]
+    },
+    {
+      "id": "virtuspro_2021",
+      "displayName": "Virtus.pro 2021",
+      "playerIds": [
+        "sanji",
+        "buster",
+        "qikert",
+        "jame",
+        "yekindar"
+      ]
+    },
+    {
+      "id": "complexity_2021",
+      "displayName": "Complexity 2021",
+      "playerIds": [
+        "jks",
+        "rush",
+        "k0nfig",
+        "poizon",
+        "blamef"
+      ]
+    },
+    {
+      "id": "faze_2021",
+      "displayName": "FaZe 2021",
+      "playerIds": [
+        "olofmeister",
+        "rain",
+        "kjaerbye",
+        "coldzera",
+        "broky"
+      ]
+    },
+    {
+      "id": "fnatic_2021",
+      "displayName": "fnatic 2021",
+      "playerIds": [
+        "flusha",
+        "jw",
+        "krimz",
+        "golden",
+        "brollan"
+      ]
+    },
+    {
+      "id": "gambit_2021",
+      "displayName": "Gambit 2021",
+      "playerIds": [
+        "hobbit",
+        "interz",
+        "Ax1Le",
+        "sh1ro",
+        "nafany"
+      ]
+    },
+    {
+      "id": "nip_2021",
+      "displayName": "NIP 2021",
+      "playerIds": [
+        "twist",
+        "rez",
+        "hampus",
+        "nawwk",
+        "plopski"
+      ]
+    },
+    {
+      "id": "eg_2021",
+      "displayName": "EG 2021",
+      "playerIds": [
+        "stanislaw",
+        "tarik",
+        "brehze",
+        "ethan",
+        "cerq"
+      ]
+    },
+    {
+      "id": "godsent_2021",
+      "displayName": "GODSENT 2021",
+      "playerIds": [
+        "zehn",
+        "emi",
+        "styko",
+        "maden",
+        "farlig"
+      ]
+    },
+    {
+      "id": "spirit_2021",
+      "displayName": "Spirit 2021",
+      "playerIds": [
+        "chopper",
+        "mir",
+        "sdy",
+        "idisbalance",
+        "magixx"
+      ]
+    },
+    {
+      "id": "ex_chaos_2021",
+      "displayName": "ex-Chaos 2021",
+      "playerIds": [
+        "marke",
+        "jonji",
+        "xeppaa",
+        "leaf"
+      ]
+    },
+    {
+      "id": "mibr_2021",
+      "displayName": "MIBR 2021",
+      "playerIds": [
+        "kngv",
+        "lucas1",
+        "trk",
+        "leo-drk",
+        "vsm"
+      ]
+    },
+    {
+      "id": "cloud9_2021",
+      "displayName": "Cloud9 2021",
+      "playerIds": [
+        "alex",
+        "woxic",
+        "es3tag",
+        "floppy",
+        "mezii"
+      ]
+    },
+    {
+      "id": "mad_lions_2021",
+      "displayName": "MAD Lions 2021",
+      "playerIds": [
+        "hooxi",
+        "acoR",
+        "refrezh",
+        "sjuush",
+        "roej"
+      ]
+    },
+    {
+      "id": "saw_2021",
+      "displayName": "SAW 2021",
+      "playerIds": [
+        "arki",
+        "mutiris",
+        "roman",
+        "just",
+        "stadodo"
+      ]
+    },
+    {
+      "id": "teamone_2021",
+      "displayName": "TeamOne 2021",
+      "playerIds": [
+        "maluk3",
+        "prt",
+        "malbsmd",
+        "pesadelo"
+      ]
+    },
+    {
+      "id": "nemiga_2021",
+      "displayName": "Nemiga 2021",
+      "playerIds": [
+        "mds",
+        "jyo",
+        "speed4k",
+        "box",
+        "lollipop21k"
+      ]
+    },
+    {
+      "id": "forze_2021",
+      "displayName": "forZe 2021",
+      "playerIds": [
+        "facecrack",
+        "almazer",
+        "fl1t",
+        "xsepower",
+        "jerry"
+      ]
+    },
+    {
+      "id": "triumph_2021",
+      "displayName": "Triumph 2021",
+      "playerIds": [
+        "shakezullah",
+        "junior",
+        "bwills",
+        "penny"
+      ]
+    },
+    {
+      "id": "espada_2021",
+      "displayName": "Espada 2021",
+      "playerIds": [
+        "dimaoneshot",
+        "s0tf1k",
+        "finigan",
+        "degster",
+        "patsi"
+      ]
+    },
+    {
+      "id": "sprout_2021",
+      "displayName": "Sprout 2021",
+      "playerIds": [
+        "spiidi",
+        "denis",
+        "faven"
+      ]
+    },
+    {
+      "id": "north_2021",
+      "displayName": "North 2021",
+      "playerIds": [
+        "cajunb",
+        "gade",
+        "lekr0",
+        "kreaz",
+        "kristou"
+      ]
+    },
+    {
+      "id": "dignitas_2021",
+      "displayName": "Dignitas 2021",
+      "playerIds": [
+        "f0rest",
+        "friberg",
+        "hallzerk",
+        "h4rr3",
+        "heap"
+      ]
+    },
+    {
+      "id": "endpoint_2021",
+      "displayName": "Endpoint 2021",
+      "playerIds": [
+        "robiin",
+        "cruc1al",
+        "mightymax",
+        "surreal",
+        "flamez"
+      ]
+    },
+    {
+      "id": "geng_2021",
+      "displayName": "Gen.G 2021",
+      "playerIds": [
+        "bntet",
+        "autimatic",
+        "koosta"
+      ]
+    },
+    {
+      "id": "yeah_2021",
+      "displayName": "Yeah 2021",
+      "playerIds": [
+        "rcf",
+        "dumau",
+        "bew",
+        "swisher",
+        "f4stzin"
+      ]
+    },
+    {
+      "id": "k23_2021",
+      "displayName": "K23 2021",
+      "playerIds": [
+        "mou",
+        "nealan",
+        "keoz",
+        "n0rb3r7",
+        "kade0"
+      ]
+    },
+    {
+      "id": "envy_2021",
+      "displayName": "Envy 2021",
+      "playerIds": [
+        "legija",
+        "michu",
+        "calyx",
+        "nifty",
+        "thomas"
+      ]
+    },
+    {
+      "id": "hellraisers_2021",
+      "displayName": "HellRaisers 2021",
+      "playerIds": [
+        "jr",
+        "kalinka",
+        "flarich",
+        "problem",
+        "jiaym"
+      ]
+    },
+    {
+      "id": "ex_ethereal_2021",
+      "displayName": "ex-Ethereal 2021",
+      "playerIds": [
+        "pashanoj",
+        "r0b3n",
+        "zorte",
+        "kensi",
+        "kair0n"
+      ]
+    },
+    {
+      "id": "riders_2021",
+      "displayName": "Movistar Riders 2021",
+      "playerIds": [
+        "steel",
+        "larsen",
+        "alex_8371",
+        "mopoz",
+        "shokz"
+      ]
+    },
+    {
+      "id": "pact_2021",
+      "displayName": "PACT 2021",
+      "playerIds": [
+        "minise",
+        "lunatic",
+        "darko",
+        "goofy",
+        "sobol"
+      ]
+    },
+    {
+      "id": "skade_2021",
+      "displayName": "SKADE 2021",
+      "playerIds": [
+        "dennyslaw",
+        "duplicate",
+        "rainwaker",
+        "oxygen"
+      ]
+    },
+    {
+      "id": "rugratz_2021",
+      "displayName": "Rugratz 2021",
+      "playerIds": [
+        "rzu",
+        "kobruh",
+        "fang"
+      ]
+    },
+    {
+      "id": "nexus_2021",
+      "displayName": "Nexus 2021",
+      "playerIds": [
+        "btn",
+        "seminte",
+        "xellow",
+        "im",
+        "ragga"
+      ]
+    },
+    {
+      "id": "budapest_five_2021",
+      "displayName": "Budapest Five 2021",
+      "playerIds": [
+        "kolor",
+        "fleav",
+        "coolio",
+        "kory",
+        "torzsi"
+      ]
+    },
+    {
+      "id": "high_coast_2021",
+      "displayName": "High Coast 2021",
+      "playerIds": [
+        "djay",
+        "ben1337",
+        "pwnalone",
+        "rampage"
+      ]
+    },
+    {
+      "id": "agf_2021",
+      "displayName": "AGF 2021",
+      "playerIds": [
+        "netrick",
+        "lukki",
+        "frslev",
+        "tmb"
+      ]
+    },
+    {
+      "id": "x6tence_2021",
+      "displayName": "x6tence 2021",
+      "playerIds": [
+        "tenzki",
+        "nodios",
+        "mertz",
+        "queenix",
+        "mankz"
+      ]
+    },
+    {
+      "id": "vici_2021",
+      "displayName": "ViCi 2021",
+      "playerIds": [
+        "advent",
+        "zhoking",
+        "auman",
+        "kaze",
+        "jamyoung"
+      ]
+    },
+    {
+      "id": "apeks_2021",
+      "displayName": "Apeks 2021",
+      "playerIds": [
+        "dennis",
+        "polly",
+        "jkaem",
+        "marcelious",
+        "grus"
+      ]
+    }
+  ]
+}
