@@ -32,10 +32,6 @@ NAVI 有一條已經接上的史實任務，從開局走到斯德哥爾摩 Major
 
 畫面和數值仍在修。上面寫的是已經進遊戲、而且規則對得上的部分。
 
-![戰術控制室](Assets/_Project/Screenshots/dust2_ui_zh.png)
-
-戰術控制室。NAVI VS Gambit on Dust II。
-
 ## 程式架構
 
 規則在 `Assets/_Project/Scripts/Domain`，不依賴 Unity。一週和一場比賽的流程在 `Application`。讀 JSON 與存檔在 `Infrastructure`。生涯和對局畫面在 `Presentation`。編輯模式測試在 `Assets/_Project/Tests/EditMode`。
